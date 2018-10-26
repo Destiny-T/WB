@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登入</title>
+    <link rel="shortcut icon" href="/static/img/title_icon.ico">
+    <link rel="stylesheet" href="/static/css/login.css">
+    <link rel="stylesheet" href="/static/css/styleAll.css">
+    <script type="text/javascript" src="/static/js/jquery-1.12.3.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/static/js/login.js"></script>
+    <!--<script type="text/javascript" src="js/registerCookies.js"></script>-->
+</head>
+<body>
+    <div>
+        <div class="header">
+            <div class="logo">
+                <a href="index.html"><img src="" alt=""></a>
+                <span class="lg_sp"><img src="/static/img/reg_logoname.jpg" alt=""></span>
+            </div>
+        </div>
+        <div class="loginContent">
+            <div class="lgct_wrap">
+                <div class="lgct_wrap_">
+                    <div class="loginMsg">
+                        <div class="loginMsg_f">
+                            <div class="lgMsg_f_t">
+                                <div class="lgMsg_f_t_l">
+                                    <span class="lgMsg_f_t_l_txt">万表会员</span>
+                                </div>
+                                <div class="lgMsg_f_t_r">
+                                    还不是万表网用户？
+                                    <a href="register.html" class="lgMsg_f_t_r_r">立即注册</a>
+                                </div>
+                            </div>
+                            <div class="lgMsg_f_m">
+                                <form action="{% url 'wb:login' %}" class="lgMsg_f_m_f" method="post">
+                                    {% csrf_token %}
+                                    <ul>
+                                        <li class="lgMsg_f_m_li1">
+                                            <i class="lgMsg_f_m_user_icn1"></i>
+                                            <input type="text" name="username" class="lgMsg_f_m_int1" placeholder="手机号码/会员名/邮箱">
+                                        </li>
+                                        <li class="lgMsg_f_m_li2">
+                                            <i class="lgMsg_f_m_user_icn2"></i>
+                                            <input type="password" name="password" class="lgMsg_f_m_int2" placeholder="密码">
+                                        </li>
+                                        <li class="lgMsg_f_m_li3">
+                                            <div class="lgMsg_f_m_li3_d">
+                                                <p>
+                                                    <input type="checkbox" class="lgMsg_f_m_li3_d_int">
+                                                    自动登录
+                                                </p>
+                                                <p>
+                                                    <input type="checkbox" checked="checked" class="lgMsg_f_m_li3_d_int">
+                                                    记住账户名
+                                                </p>
+                                                <span class="lgMsg_f_m_li3_d_sp">
+                                                    <a href="#">忘记密码？</a>
+                                                </span>
+                                            </div>
+
+                                        </li>
+                                        <li>
+                                            <input type="submit" class="lgMsg_f_m_li3_d_int3">
+                                        </li>
+                                    </ul>
+                                </form>
+                            </div>
+                            <div style="clear: both"></div>
+                            <div class="lgMsg_f_b">
+                                <div class="lgMsg_f_b1">使用合作网站登录万表网：</div>
+                                <div class="lgMsg_f_b2">
+                                    <div class="lgMsg_f_b2_w">
+                                        <a href="#" class="lgMsg_f_b2_wa1">支付宝</a>
+                                        <span>|</span>
+                                        <a href="#" class="lgMsg_f_b2_wa2">QQ</a>
+                                        <span>|</span>
+                                        <a href="#" class="lgMsg_f_b2_wa3">新浪微博</a>
+                                        <span>|</span>
+                                        <a href="#" class="lgMsg_f_b2_wa4">微信</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

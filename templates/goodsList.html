@@ -1,0 +1,954 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品列表</title>
+    <link rel="shortcut icon" href="img/title_icon.ico">
+    <script type="text/javascript" src="js/jquery-1.12.3.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <link rel="stylesheet" href="css/styleAll.css">
+    <link rel="stylesheet" href="css/addHeader.css">
+    <link rel="stylesheet" href="css/goodsList.css">
+    <link rel="stylesheet" href="css/indexFooter.css">
+    <script type="text/javascript" src="js/indexHeader.js"></script>
+    <script type="text/javascript" src="js/goodsList.js"></script>
+</head>
+<body>
+    <!--头部开始-->
+    <div class="header">
+        <div class="loginbar">
+            <div class="login_r" >
+                <div class="loginBtn">
+                    <a href="login.html">登入</a>
+                </div>
+                <div class="loginBtn">
+                    <div class="loginBtn_2">
+                        <a href="register.html">注册(即赠50元)</a>
+                    </div>
+                </div>
+                <div class="loginBtn">
+                    <span>|</span>
+                    <a href="#">会员中心</a>
+                </div>
+                <div class="loginBtn loginBtn_ph">
+                    <span>|</span>
+                    <a href="#" >手机万表 <i class="login_r_ph_icon"></i></a>
+                    <div class="login_r_ph_qr">
+                        <div class="login_r_ph_qr1">
+                            <img src="img/index_hqr1.png" alt="">
+                            <p>万表商城客户端</p>
+                            <p>手机下单再减30元</p>
+                        </div>
+                        <div class="login_r_ph_qr1">
+                            <img src="img/index_hqr1.png" alt="">
+                            <p>万表商城客户端</p>
+                            <p>手机下单再减30元</p>
+                        </div>
+                    </div>
+                    <div style="clear: both"></div>
+                </div>
+                <div class="loginBtn">
+                    <span>|</span>
+                    <a href="#">服务热线:400-883-2688<i class="login_r_ph_icon"></i></a>
+                </div>
+            </div>
+        </div>
+        <div style="clear: both"></div>
+        <div class="logohead">
+            <div class="logohead_wrap">
+                <div class="logohead_wrap_l">
+                    <a href="index.html"></a>
+                    <span></span>
+                </div>
+                <div class="search">
+                    <div class="search_input">
+                        <input type="text" placeholder="搜索品牌/型号" class="search_input_l">
+                        <button class="search_btn"></button>
+                    </div>
+                    <div class="search_p">
+                        <a href="#">万表五周年庆</a>
+                        <a href="#">正品欧米茄</a>
+                        <a href="#">名表1.5折起</a>
+                        <a href="#">NOMOS</a>
+                    </div>
+                </div>
+                <div class="shopCart">
+                    <a href="#">购物车
+                        <span class="icon-cart"></span>
+                        <div class="btn_r_t">
+                            <p class="goodsNumx">0</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div style="clear: both"></div>
+        <div class="menu">
+            <div class="menu_wrap">
+                <div class="menu_w_left">
+                    <a href="#">
+                        <div class="menu_w_left-sub" >全部腕表</div>
+                    </a>
+                    <div class="menuList">
+                        <div class="subMenuList">
+                            <dl>
+                                <dt>
+                                    <a href="goodsList.html">顶级品牌</a>
+                                </dt>
+                                <dd>
+                                    <a href="#">百达翡丽</a>
+                                    <a href="#">柏高</a>
+                                    <a href="#">亨利.慕时</a>
+                                </dd>
+                                <dd class="subMenuList_m1">
+                                    <!--隐藏菜单-->
+                                    <div class="subMenuList_m1_close"></div>
+                                    <div class="subMenuList_m1_1">
+                                        <h6>顶级品牌</h6>
+                                        <div class="subMenuList_m1_1_bra">
+                                            <a href="#">
+                                                <img src="img/index_menuSub1.png" alt="">
+                                            </a>
+                                            <a href="#">
+                                                <img src="img/index_menuSub1.png" alt="">
+                                            </a>
+                                            <a href="#">
+                                                <img src="img/index_menuSub1.png" alt="">
+                                            </a>
+                                            <a href="#">
+                                                <img src="img/index_menuSub1.png" alt="">
+                                            </a>
+                                            <a href="#">
+                                                <img src="img/index_menuSub1.png" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="subMenuList_m1_2">
+                                        <h6>精选推荐</h6>
+                                        <div class="subMenuList_m1_1_cho">
+                                            <a href="#">
+                                                尖刀
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                怀表
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                天文台认证
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                飞行员表
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                军表
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                潜水表
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                限量款
+                                                <span>/</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="subMenuList_m1_3">
+                                        <h6>促销精选</h6>
+                                        <div class="subMenuList_m1_1_red">
+                                            <a href="#">
+                                                表中之王，百达翡丽
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                柏高，最高满减3万
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                艾美达，全球限量款
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                大牌进驻，亨利·慕时
+                                                <span>/</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </dd>
+                                <div style="clear: both"></div>
+                            </dl>
+                        </div>
+                        <div class="subMenuList">
+                            <dl>
+                                <dt>
+                                    <a href="#">奢华品牌</a>
+                                </dt>
+                                <dd>
+                                    <a href="#">欧米茄</a>
+                                    <a href="#">格拉苏蒂·莫勒</a>
+                                    <a href="#">库尔沃</a>
+                                </dd>
+                                <dd class="subMenuList_m1">
+                                    <!--隐藏菜单-->
+                                    <div class="subMenuList_m1_close"></div>
+                                    <div class="subMenuList_m1_1">
+                                        <h6>奢华品牌</h6>
+                                        <div class="subMenuList_m1_1_bra">
+                                            <a href="#">
+                                                <img src="img/index_menuSub1.png" alt="">
+                                            </a>
+                                            <a href="#">
+                                                <img src="img/index_menuSub1.png" alt="">
+                                            </a>
+                                            <a href="#">
+                                                <img src="img/index_menuSub1.png" alt="">
+                                            </a>
+                                            <a href="#">
+                                                <img src="img/index_menuSub1.png" alt="">
+                                            </a>
+                                            <a href="#">
+                                                <img src="img/index_menuSub1.png" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="subMenuList_m1_2">
+                                        <h6>精选推荐</h6>
+                                        <div class="subMenuList_m1_1_cho">
+                                            <a href="#">
+                                                尖刀
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                怀表
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                天文台认证
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                飞行员表
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                军表
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                潜水表
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                限量款
+                                                <span>/</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="subMenuList_m1_3">
+                                        <h6>促销精选</h6>
+                                        <div class="subMenuList_m1_1_red">
+                                            <a href="#">
+                                                表中之王，百达翡丽
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                柏高，最高满减3万
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                艾美达，全球限量款
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                大牌进驻，亨利·慕时
+                                                <span>/</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </dd>
+                                <div style="clear: both"></div>
+                            </dl>
+                        </div>
+                        <div class="subMenuList">
+                            <dl>
+                                <dt>
+                                    <a href="#">轻奢品牌</a>
+                                </dt>
+                                <dd>
+                                    <a href="#">天梭</a>
+                                    <a href="#">赫柏林</a>
+                                    <a href="#">浪琴</a>
+                                </dd>
+                                <dd class="subMenuList_m1">
+                                    <!--隐藏菜单-->
+                                    <div class="subMenuList_m1_close"></div>
+                                    <div class="subMenuList_m1_1">
+                                        <h6>轻奢品牌</h6>
+                                        <div class="subMenuList_m1_1_bra">
+                                            <a href="#">
+                                                <img src="img/index_menuSub1.png" alt="">
+                                            </a>
+                                            <a href="#">
+                                                <img src="img/index_menuSub1.png" alt="">
+                                            </a>
+                                            <a href="#">
+                                                <img src="img/index_menuSub1.png" alt="">
+                                            </a>
+                                            <a href="#">
+                                                <img src="img/index_menuSub1.png" alt="">
+                                            </a>
+                                            <a href="#">
+                                                <img src="img/index_menuSub1.png" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="subMenuList_m1_2">
+                                        <h6>精选推荐</h6>
+                                        <div class="subMenuList_m1_1_cho">
+                                            <a href="#">
+                                                尖刀
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                怀表
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                天文台认证
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                飞行员表
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                军表
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                潜水表
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                限量款
+                                                <span>/</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="subMenuList_m1_3">
+                                        <h6>促销精选</h6>
+                                        <div class="subMenuList_m1_1_red">
+                                            <a href="#">
+                                                表中之王，百达翡丽
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                柏高，最高满减3万
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                艾美达，全球限量款
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                大牌进驻，亨利·慕时
+                                                <span>/</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="subMenuList">
+                            <dl>
+                                <dt>
+                                    <a href="#">时尚品牌</a>
+                                </dt>
+                                <dd>
+                                    <a href="#">卡西欧</a>
+                                    <a href="#">C罗表</a>
+                                    <a href="#">阿玛尼</a>
+                                </dd>
+                                <dd class="subMenuList_m1">
+                                    <!--隐藏菜单-->
+                                    <div class="subMenuList_m1_close"></div>
+                                    <div class="subMenuList_m1_1">
+                                        <h6>时尚品牌</h6>
+                                        <div class="subMenuList_m1_1_bra">
+                                            <a href="#">
+                                                <img src="img/index_menuSub1.png" alt="">
+                                            </a>
+                                            <a href="#">
+                                                <img src="img/index_menuSub1.png" alt="">
+                                            </a>
+                                            <a href="#">
+                                                <img src="img/index_menuSub1.png" alt="">
+                                            </a>
+                                            <a href="#">
+                                                <img src="img/index_menuSub1.png" alt="">
+                                            </a>
+                                            <a href="#">
+                                                <img src="img/index_menuSub1.png" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="subMenuList_m1_2">
+                                        <h6>精选推荐</h6>
+                                        <div class="subMenuList_m1_1_cho">
+                                            <a href="#">
+                                                尖刀
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                怀表
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                天文台认证
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                飞行员表
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                军表
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                潜水表
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                限量款
+                                                <span>/</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="subMenuList_m1_3">
+                                        <h6>促销精选</h6>
+                                        <div class="subMenuList_m1_1_red">
+                                            <a href="#">
+                                                表中之王，百达翡丽
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                柏高，最高满减3万
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                艾美达，全球限量款
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                大牌进驻，亨利·慕时
+                                                <span>/</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="subMenuList">
+                            <dl>
+                                <dt>
+                                    <a href="#">潮牌</a>
+                                </dt>
+                                <dd>
+                                    <a href="#">CHIC驰客</a>
+                                    <a href="#">天铭</a>
+                                    <a href="#">C罗表</a>
+                                </dd>
+                                <dd class="subMenuList_m1">
+                                    <!--隐藏菜单-->
+                                    <div class="subMenuList_m1_close"></div>
+                                    <div class="subMenuList_m1_1">
+                                        <h6>潮牌</h6>
+                                        <div class="subMenuList_m1_1_bra">
+                                            <a href="#">
+                                                <img src="img/index_menuSub1.png" alt="">
+                                            </a>
+                                            <a href="#">
+                                                <img src="img/index_menuSub1.png" alt="">
+                                            </a>
+                                            <a href="#">
+                                                <img src="img/index_menuSub1.png" alt="">
+                                            </a>
+                                            <a href="#">
+                                                <img src="img/index_menuSub1.png" alt="">
+                                            </a>
+                                            <a href="#">
+                                                <img src="img/index_menuSub1.png" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="subMenuList_m1_2">
+                                        <h6>精选推荐</h6>
+                                        <div class="subMenuList_m1_1_cho">
+                                            <a href="#">
+                                                尖刀
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                怀表
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                天文台认证
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                飞行员表
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                军表
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                潜水表
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                限量款
+                                                <span>/</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="subMenuList_m1_3">
+                                        <h6>促销精选</h6>
+                                        <div class="subMenuList_m1_1_red">
+                                            <a href="#">
+                                                表中之王，百达翡丽
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                柏高，最高满减3万
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                艾美达，全球限量款
+                                                <span>/</span>
+                                            </a>
+                                            <a href="#">
+                                                大牌进驻，亨利·慕时
+                                                <span>/</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="menuNav">
+                    <div class="submenuNav submenuNav_">
+                        <a href="#">男表</a>
+                        <!--隐藏下拉列表-->
+                        <div class="submenuNav_sub1">
+                            <ul>
+                                <li><a href="#">商务</a></li>
+                                <li><a href="#">时尚</a></li>
+                                <li><a href="#">潮牌</a></li>
+                                <li><a href="#">运动</a></li>
+                                <li><a href="#">珐琅</a></li>
+                                <li><a href="#">智能</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="submenuNav">
+                        <a href="#">女表</a>
+                        <div>
+                            <!--隐藏下拉列表-->
+                        </div>
+                    </div>
+                    <div class="submenuNav">
+                        <a href="#">闪购</a>
+                    </div>
+                    <div class="submenuNav">
+                        <a href="#">海外购</a>
+                    </div>
+                    <div class="submenuNav">
+                        <a href="#">珠宝</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="clear: both"></div>
+    </div>
+    <div style="clear: both"></div>
+    <!--头部结束-->
+
+    <!--内容开始-->
+    <div class="gdListContent">
+        <div class="gdList_w">
+            <div class="gdList_t">
+                <a href="#">首页</a>
+                <i>&gt;</i>
+                <span>选表中心</span>
+            </div>
+            <!--<div style="clear: both"></div>-->
+            <div class="gdList_l">
+                <div class="gdList_l_nav">
+                    <ul>
+                        <li>
+                            <h3>
+                                <span></span>
+                                所有类别手表
+                            </h3>
+                            <ul>
+                                <li><a href="#">手表</a></li>
+                                <li><a href="#">表带/配件</a></li>
+                                <li><a href="#">珠宝</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h3>
+                                <span></span>
+                                场合
+                            </h3>
+                            <ul>
+                                <li><a href="#">正装</a></li>
+                                <li><a href="#">商务休闲</a></li>
+                                <li><a href="#">时尚</a></li>
+                                <li><a href="#">运动</a></li>
+                                <li><a href="#">收藏</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h3>
+                                <span></span>
+                                送礼
+                            </h3>
+                            <ul>
+                                <li>
+                                    <a href="#"><b>男表></b></a>
+                                    <div class="gdList_l_nav_s">
+                                        <a href="#">送父亲</a>
+                                        <a href="#">送老公</a>
+                                        <a href="#">送男友</a>
+                                        <a href="#">送朋友</a>
+                                        <a href="#">送同学</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#"><b>女表></b></a>
+                                    <div class="gdList_l_nav_s">
+                                        <a href="#">送母亲</a>
+                                        <a href="#">送老婆</a>
+                                        <a href="#">送女友</a>
+                                        <a href="#">送闺蜜</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a href="#"><b>情侣表></b></a>
+                                    <div class="gdList_l_nav_s">
+                                        <a href="#">新婚</a>
+                                        <a href="#">恋人</a>
+                                        <a href="#">父母</a>
+                                        <a href="#">商务礼品</a>
+                                        <a href="#">特别纪念</a>
+                                    </div>
+                                </li>
+
+
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="gdList_r">
+                <div class="gdList_r_t">
+                    <div class="gdList_r_t_h">
+                        热门搜索：
+                        <a href="#">法国表买一送一</a>
+                        <a href="#">原装德国表</a>
+                        <a href="#">浪琴表5.5折起</a>
+                        <a href="#">潮表</a>
+                        <a href="#">2016巴塞新款</a>
+                    </div>
+                    <div class="gdList_r_t_res">
+                        <b>已找到10545件:</b>
+                    </div>
+                    <dl class="gdList_r_t_dl gdList_r_t_bra">
+                        <dt class="gdList_r_t_dt">品牌</dt>
+                        <dd class="gdList_r_t_dd1">
+                            <div class="gdList_r_t_dd1_d">
+                                <ul>
+                                    <li>
+                                        <div class="gdList_r_t_dd1_d_d">
+                                            <span><a href="#">百达翡丽</a></span>
+                                            <span><a href="#">江诗丹顿</a></span>
+                                            <span><a href="#">亨利慕时</a></span>
+                                            <span><a href="#">宝玑</a></span>
+                                            <span><a href="#">宝珀</a></span>
+                                            <span><a href="#">柏高</a></span>
+                                            <span><a href="#">伯爵</a></span>
+                                        </div>
+                                        <span class="gdList_r_t_dd1_d_sp">[顶级]</span>
+                                    </li>
+                                    <li>
+                                        <div class="gdList_r_t_dd1_d_d">
+                                            <span><a href="#">百达翡丽</a></span>
+                                            <span><a href="#">江诗丹顿</a></span>
+                                            <span><a href="#">亨利慕时</a></span>
+                                            <span><a href="#">宝玑</a></span>
+                                            <span><a href="#">宝珀</a></span>
+                                            <span><a href="#">柏高</a></span>
+                                            <span><a href="#">伯爵</a></span>
+                                        </div>
+                                        <span class="gdList_r_t_dd1_d_sp">[顶级]</span>
+                                    </li>
+                                    <li>
+                                        <div class="gdList_r_t_dd1_d_d">
+                                            <span><a href="#">百达翡丽</a></span>
+                                            <span><a href="#">江诗丹顿</a></span>
+                                            <span><a href="#">亨利慕时</a></span>
+                                            <span><a href="#">宝玑</a></span>
+                                            <span><a href="#">宝珀</a></span>
+                                            <span><a href="#">柏高</a></span>
+                                            <span><a href="#">伯爵</a></span>
+                                        </div>
+                                        <span class="gdList_r_t_dd1_d_sp">[顶级]</span>
+                                    </li>
+                                    <li>
+                                        <div class="gdList_r_t_dd1_d_d">
+                                            <span><a href="#">百达翡丽</a></span>
+                                            <span><a href="#">江诗丹顿</a></span>
+                                            <span><a href="#">亨利慕时</a></span>
+                                            <span><a href="#">宝玑</a></span>
+                                            <span><a href="#">宝珀</a></span>
+                                            <span><a href="#">柏高</a></span>
+                                            <span><a href="#">伯爵</a></span>
+                                        </div>
+                                        <span class="gdList_r_t_dd1_d_sp">[顶级]</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="gdList_r_t_dl gdList_r_t_bra">
+                        <dt class="gdList_r_t_dt">品牌</dt>
+                        <dd class="gdList_r_t_dd2">
+                            <div class="gdList_r_t_dd2_d">
+                                    <span><a href="#">男表</a></span>
+                                    <span><a href="#">女表</a></span>
+                                    <span><a href="#">情侣</a></span>
+                                    <span><a href="#">中性</a></span>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="gdList_r_t_dl gdList_r_t_bra">
+                        <dt class="gdList_r_t_dt">价格</dt>
+                        <dd class="gdList_r_t_dd3">
+                            <div class="gdList_r_t_dd3_d">
+                                    <span><a href="#">1000以下</a></span>
+                                    <span><a href="#">1000-3000</a></span>
+                                    <span><a href="#">3000-5000</a></span>
+                                    <span><a href="#">5000-10,000</a></span>
+                                    <span><a href="#">10,000-50,000</a></span>
+                                    <span><a href="#">50,000-100,000</a></span>
+                                    <span><a href="#">100,000以上</a></span>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="gdList_r_t_dl gdList_r_t_bra">
+                        <dt class="gdList_r_t_dt">机芯</dt>
+                        <dd class="gdList_r_t_dd4">
+                            <div class="gdList_r_t_dd4_d">
+                                    <span><a href="#">机械表</a></span>
+                                    <span><a href="#">自动机械</a></span>
+                                    <span><a href="#">手动机械</a></span>
+                                    <span><a href="#">石英表</a></span>
+                                    <span><a href="#">光能</a></span>
+                                    <span><a href="#">电波</a></span>
+                                    <span><a href="#">人动电能</a></span>
+                                    <span><a href="#">智能</a></span>
+                                    <span><a href="#">其它</a></span>
+                            </div>
+                        </dd>
+                    </dl>
+                    <div class="gdList_r_t_slide">
+                        <div class="gdList_r_t_slide_btn">
+                            <span class="gdList_r_t_slide_txt">更多选项（表盘、表带、功能、防水等）</span>
+                            <span class="gdList_r_t_slide_icon"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gdList_r_m">
+                    <div class="gdList_r_m_sort">
+                        <div class="gdList_r_m_sort_l">
+                            <a href="#" class="gdList_r_m_sort_l_a1">综合</a>
+                            <a href="#" class="gdList_r_m_sort_l_a2">价格</a>
+                            <a href="#" class="gdList_r_m_sort_l_a3">销量</a>
+                            <a href="#" class="gdList_r_m_sort_l_a4">新品</a>
+                            <a href="#" class="gdList_r_m_sort_l_a5">折扣</a>
+                        </div>
+                        <div class="gdList_r_m_sort_c">
+                            <a href="#" class="gdList_r_m_sort_c_a1">闪购</a>
+                            <a href="#" class="gdList_r_m_sort_c_a2">闪电发货</a>
+                            <a href="#" class="gdList_r_m_sort_c_a3">预售</a>
+                            <a href="#" class="gdList_r_m_sort_c_a4">海外购</a>
+                        </div>
+                    </div>
+                    <div class="gdList_r_m_list">
+                        <ul></ul>
+                    </div>
+                </div>
+                <div class="gdList_r_b"></div>
+            </div>
+        </div>
+    </div>
+    <!--内容结束-->
+
+    <!--尾部开始-->
+    <div class="footer">
+        <div class="serColumn">
+            <div class="serColumn_wrap">
+                <a href="#">
+                    <span class="serColumn_icon1"></span>
+                    正品保障
+                </a>
+                <a href="#">
+                    <span class="serColumn_icon2"></span>
+                    免息分期
+                </a>
+                <a href="#">
+                    <span class="serColumn_icon3"></span>
+                    全球联保
+                </a>
+                <a href="#">
+                    <span class="serColumn_icon4"></span>
+                    假一赔三
+                </a>
+                <a href="#">
+                    <span class="serColumn_icon5"></span>
+                    终身售后
+                </a>
+            </div>
+        </div>
+        <div class="serGuid">
+            <div class="serGuid_wrap">
+                <div class="serGuid_wrap_l">
+                    <p class="serGuid_wrap_l_p1">客服电话</p>
+                    <p class="serGuid_wrap_l_p2">400-883-2688</p>
+                    <p class="serGuid_wrap_l_p3">外呼号码 020-83931899</p>
+                    <p class="serGuid_wrap_l_p4"><a href="#">在线咨询</a></p>
+                </div>
+                <div class="serGuid_wrap_r">
+                    <dl>
+                        <dt>新手</dt>
+                        <dd>
+                            <a href="#">注册新会员</a>
+                            <a href="#">如何订购</a>
+                            <a href="#">正品保障</a>
+                            <a href="#">常见手表问题</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>支付</dt>
+                        <dd>
+                            <a href="#">支付方式</a>
+                            <a href="#">分期付款</a>
+                            <a href="#">发票说明</a>
+                            <a href="#">支付问题</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>配送</dt>
+                        <dd>
+                            <a href="#">包裹签收</a>
+                            <a href="#">配送方式</a>
+                            <a href="#">配送说明</a>
+                            <a href="#">自提流程</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>保障</dt>
+                        <dd>
+                            <a href="#">服务承诺</a>
+                            <a href="#">价格保护</a>
+                            <a href="#">七天退换说明</a>
+                            <a href="#">保修说明</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>帮助</dt>
+                        <dd>
+                            <a href="#">商务合作</a>
+                            <a href="#">分销加盟</a>
+                            <a href="#">严正声明</a>
+                            <a href="#">人才招聘</a>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="ft_info">
+            <div class="ft_info_coo">
+                <div class="ft_info_coo_wrap">
+                    <a href="#">万表网app</a>
+                    <a href="#">大表哥app</a>
+                    <a href="#">网站联盟</a>
+                    <a href="#">新款手表</a>
+                    <a href="#">热销</a>
+                    <a href="#">万表天猫旗舰店</a>
+                    <a href="#">万表京东旗舰店</a>
+                    <a href="#">手表资讯</a>
+                    <a href="#">品牌大全</a>
+                    <a href="#">关于我们</a>
+                    <span>></span>
+                </div>
+            </div>
+            <div class="ft_info_corp">
+                <p>
+                    万表网名表商城 版权所有 2008-2016
+                    <a href="#">ICP备案证书号:粤ICP备09108738号</a>
+                    网监备案:4401060103141
+                </p>
+                <p>广州市万表科技股份有限公司 地址:广州市天河区珠江新城临江大道507号</p>
+                <p>Copyright 2008-2016 WWW.WBIAO.CN.LTD ALL RIGHT RESERVED.</p>
+            </div>
+            <div class="ft_info_icon">
+                <a href="#"><img src="img/ft-gzaic.gif" alt=""></a>
+                <a href="#"><img src="img/ft-eca.jpg" alt=""></a>
+                <a href="#"><img src="img/ft-cnnic_en.png" alt=""></a>
+                <a href="#"><img src="img/ft-cert.png" alt=""></a>
+                <a href="#"><img src="img/ft-gongshangxinxi.jpg" alt=""></a>
+            </div>
+            <div class="ft_info_frili">
+                <div class="ft_info_frili_wrap">
+                    <span>友情链接:</span>
+                    <span class="ft_info_frili_fml">></span>
+                    <a href="#">联系QQ3268217127</a>
+                    <a href="#">折800网</a>
+                    <a href="#">名鞋库</a>
+                    <a href="#">万表世界</a>
+                    <a href="#">手表名表</a>
+                    <a href="#">衣联网</a>
+                    <a href="#">华为官网</a>
+                    <a href="#">乐视手机</a>
+                    <a href="#">音乐巴士</a>
+                    <a href="#">畅途网</a>
+                    <a href="#">拍鞋网</a>
+                    <a href="#">八百方</a>
+                    <a href="#">马可波罗网</a>
+                    <a href="#">家具网</a>
+                    <a href="#">家具网</a>
+                    <a href="#">太平洋家居网产品库</a>
+                    <a href="#">聚美优品优惠券</a>
+                    <a href="#">股城网</a>
+                </div>
+            </div>
+        </div>
+
+        <!--<div class="address"></div>-->
+    </div>
+    <!--尾部结束-->
+</body>
+</html>

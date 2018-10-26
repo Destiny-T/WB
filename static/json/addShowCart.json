@@ -1,0 +1,16 @@
+[
+  {
+    "id":"id1",
+    "g_l_b": [{"id":1, "src":"g_s1.jpg"}, {"id":2, "src":"g_s2.jpg"}, {"id":3, "src":"g_s3.jpg"}, {"id":4, "src":"g_s4.jpg"}, {"id":5, "src":"g_s5.jpg"}],
+    "g_l_s":[{"id":1, "src":"g_l_s1.jpg"}, {"id":2, "src":"g_l_s2.jpg"}, {"id":3, "src":"g_l_s3.jpg"}, {"id":4, "src":"g_l_s4.jpg"}, {"id":5, "src":"g_l_s5.jpg"}],
+    "g_r":{"name":"天梭TISSOT-力洛克系列 T41.1.483.33 机械男表","model":"T41.1.483.33","brand":"瑞士","pro":"天梭150周年纪念表款","priceN":"3337","priceM":"4450"}
+  },
+  {
+    "id":"id3",
+    "g_l_b": [{"id":1, "src":"g_b1.jpg"}, {"id":2, "src":"g_b2.jpg"}, {"id":3, "src":"g_b3.jpg"}, {"id":4, "src":"g_b4.jpg"}, {"id":5, "src":"g_b5.jpg"}],
+    "g_l_s":[{"id":1, "src":"g_l_b1.jpg"}, {"id":2, "src":"g_l_b2.jpg"}, {"id":3, "src":"g_l_b3.jpg"}, {"id":4, "src":"g_l_b4.jpg"}, {"id":5, "src":"g_l_b5.jpg"}],
+    "g_r":{"name":"瑞士迪沃斯（DAVOSA）-Classic Quartz 经典系列 16246615 男士商务、石英表","model":"T41.1.483.33","brand":"瑞士","pro":"天梭150周年纪念表款","priceN":"1700","priceM":"2280"}
+  }
+]
+
+

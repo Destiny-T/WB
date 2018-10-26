@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+    <link rel="stylesheet" href="/static/css/register.css">
+    <link rel="stylesheet" href="/static/css/styleAll.css">
+    <script type="text/javascript" src="/static/js/jquery-1.12.3.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/static/js/register.js"></script>
+    <script type="text/javascript" src="/static/js/registerCookies.js"></script>
+</head>
+<body>
+    <div>
+        <div class="header">
+            <div class="logo">
+                <a href="#"><img src="" alt=""></a>
+                <span class="lg_sp"><img src="/static/img/reg_logoname.jpg" alt=""></span>
+            </div>
+        </div>
+        <div style="clear: both"></div>
+        <div class="regMsg">
+            <div class="regMsg_t">
+                欢迎注册
+                <a href="#" class="regMsg_t_a">已有帐号，现在登录</a>
+            </div>
+            <div class="regMsg_m">
+                <ul>
+                    <li class="regMsg_m_li1 regMsg_m_act">填写用户名和密码</li>
+                    <li class="regMsg_m_li2">验证手机</li>
+                    <li class="regMsg_m_li3">完成注册</li>
+                </ul>
+            </div>
+            <div class="regMsg_b">
+                <form action="{% url 'wb:register' %}" method="post">
+                    {% csrf_token %}
+                    <ul class="regMsg_b_u">
+                        <li>
+                            <input type="text" placeholder="请输入用户名" name="username" class="regMsg_b_int1">
+                            <p class="regMsg_b_p1">用户名应为字母或者是中文开头,只能输入4-20个中英文字符</p>
+                        </li>
+                        <li>
+                            <input type="password" placeholder="请输入密码" name="password" class="regMsg_b_int2">
+                            <p class="regMsg_b_p2">密码的长度大于6位或者小于20位</p>
+                        </li>
+                        <li>
+                            <input type="password" placeholder="确认密码" name="mypassword" class="regMsg_b_int3">
+                            <p class="regMsg_b_p3"></p>
+                        </li>
+                        <li>
+                            <input type="checkbox" placeholder="请输入用户名" name="agree"  checked="checked" class="regMsg_b_int4">
+                            <a href="#">同意万表网用户协议</a>
+                        </li>
+                        <li>
+                            <input type="submit" placeholder="请输入用户名" name="agree"  value="下一步" class="regMsg_b_int5">
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    
+</body>
+</html>

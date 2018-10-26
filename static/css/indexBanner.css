@@ -1,0 +1,196 @@
+/*轮播图*/
+.banner{
+    width: 100%;
+    /*overflow: hidden;*/
+    display: block;
+
+}
+.banSlide{
+    width: 100%;
+    height: 430px;
+    margin: auto;
+    z-index: 0;
+    position: relative;
+    overflow: hidden;
+}
+.bigpic{
+    width: 100%;
+    /*margin: auto;*/
+    /*width: 1400px;*/
+    height: 430px;
+    /*overflow: hidden;*/
+    position: relative;
+}
+.bigpic li{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.bigpic li img{
+    /*float: left;*/
+    display: block;
+}
+
+/*轮播图的下标索引*/
+.smallIndex {
+    padding-left: 20px;
+    background-color: rgba(0,0,0,.3);
+    border-radius: 20px;
+    display: block;
+    width: 270px;
+    height: 30px;
+    z-index: 9999;
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    margin-left: -200px;
+}
+.smallIndex li{
+    background-color: rgba(176,128,136,.5);
+    border-radius: 50%;
+    display: block;
+    width: 10px;
+    height: 10px;
+    float: left;
+    margin: 10px;
+}
+.active{
+    border: 2px solid white;
+    background:none !important;
+    opacity:1 !important;
+    width: 8px;
+    height: 8px;
+}
+.prev{
+    background: url("../img/bannerBtn.png") 0 -15px no-repeat;
+    display: block;
+    width: 30px;
+    height: 90px;
+    position: absolute;
+    left: 400px;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -45px;
+}
+.next{
+    background: url("../img/bannerBtn.png") -31px -15px no-repeat;
+    display: block;
+    width: 30px;
+    height: 90px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    margin-left: -150px;
+    margin-top: -45px;
+}
+.prev:hover{
+    background-position: 0 -106px;
+}
+.next:hover{
+    background-position: -31px -106px;
+}
+
+/*轮播图下的栏目标题*/
+.introColumn{
+    overflow: hidden;
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 29px;
+    padding-bottom: 4px;
+}
+.introColumn ul{
+    overflow: hidden;
+    display: inline-block;
+}
+.introColumn ul li{
+    background: url(../img/intro-line.png) center right no-repeat;
+    height: 48px;
+    padding: 0 80px;
+    float: left;
+    color: #666;
+    font-size: 14px;
+
+}
+.introColumn ul li a{
+    text-decoration: none;
+    color: #666;
+    line-height: 1.5;
+    z-index: 444;
+    cursor: pointer;
+}
+.introColumn ul li a:hover{
+    color: red;
+}
+.intro_icon1{
+    background: url("../img/intro-btn.png") no-repeat;
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.intro_icon2{
+    background: url("../img/intro-btn.png") -45px 0 no-repeat;
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.intro_icon3{
+    background: url("../img/intro-btn.png") -95px 0 no-repeat;
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.intro_icon4{
+    background: url("../img/intro-btn.png") -143px 0 no-repeat;
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.produceSlide{
+    width: 1200px;
+    margin: auto;
+}
+.produceSlide_{
+    height: 150px;
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+.proShow_wrap{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: 150px;
+    max-width: 1204px;
+    margin: auto;
+}
+.proShow_cont{
+    width: 615%;
+    position: relative;
+}
+.proShow_cont a{
+    float: left;
+    list-style: none;
+    position: relative;
+    margin-right: 4px;
+    width: 297px;
+    overflow: hidden;
+}
+.proShow_cont a img{
+    /*display: block;*/
+    width: 297px;
+    height: 150px;
+    /*position: absolute;*/
+    transition: all 2s;
+
+}
+.proShow_cont a img:hover{
+    transform: scale(1.1);
+}

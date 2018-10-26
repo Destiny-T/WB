@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <link rel="shortcut icon" href="img/title_icon.ico">
+    <link rel="stylesheet" href="css/styleAll.css">
+    <link rel="stylesheet" href="css/clearShopCart.css">
+    <link rel="stylesheet" href="css/indexFooter.css">
+    <script type="text/javascript" src="js/jquery-1.12.3.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/addShopCart.js"></script>
+    <script type="text/javascript" src="js/clearShopCart.js"></script>
+</head>
+<body>
+    <div>
+        <div class="header">
+            <div class="h_f">
+                <div class="h_f_wrap">
+                    <div class="login">
+                        <p class="login_p1"><a href="login.html">登录</a></p>
+                        <p class="login_p2"><a href="register.html">注册</a><span class="login_ct_span">&nbsp;|&nbsp;</span></p>
+                        <p class="login_p3"><span>全国客服电话：</span><b>400-883-2688</b><span class="login_ct_span">&nbsp;|&nbsp;</span></p>
+                        <p class="login_p4"><a href="#">我的订单</a></p>
+                        <p class="login_p5"><a href="#">会员中心</a><span class="login_ct_span">&nbsp;|&nbsp;</span></p>
+                        <p class="login_p6"><a href="#">去购物车结算</a></p>
+                    </div>
+                </div>
+            </div>
+            <div style="clear: both"></div>
+            <div class="h_s">
+                <div class="h_s_wrap">
+                    <div class="logo">
+                        <a href="#">
+                            <img src="img/cartLogo-ico.jpg" alt="">
+                        </a>
+                        <span>
+                            <img src="img/cartLogoname.jpg" alt="">
+                        </span>
+                    </div>
+
+                    <div class="wait">
+                        <ul>
+                            <li class="wt_li1"><h2><span>选购商品</span></h2></li>
+                            <li class="wt_li2"><h2><span>提交订单</span></h2></li>
+                            <li class="wt_li3"><h2><span>支付订单</span></h2></li>
+                            <li class="wt_li4"><h2><span>等待签收</span></h2></li>
+                        </ul>
+                    </div>
+                    <div style="clear: both"></div>
+                </div>
+            </div>
+        </div>
+        <div style="clear: both"></div>
+        <div class="order">
+            <div class="order_wrap">
+                <div class="order_wrap_">
+                    <div class="odr_head">
+                        <h2>
+                            购物车：
+                            <span>
+                                <a href="login.html">现在登录</a>
+                                ，购物车信息将一直为您保存
+                            </span>
+                        </h2>
+                    </div>
+                    <div style="clear: both"></div>
+                    <div class="odr_list">
+                        <div class="odr_list_g">
+                            <table class="odr_goods">
+                                <tbody>
+                                    <tr class="gds_tr1">
+                                        <th class="gds_tr1_th1">商品</th>
+                                        <th class="gds_tr1_th2">市场价</th>
+                                        <th class="gds_tr1_th3">单价</th>
+                                        <th class="gds_tr1_th4">数量</th>
+                                        <th class="gds_tr1_th5">操作</th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="odr_list_c">
+                            <p class="odr_list_c_p1">商品总额：<span>￥<span class="odr_list_c_sum">3337</span></span></p>
+                            <p class="odr_list_c_p2">共节省：￥<span class="odr_list_c_save">1113</span></p>
+                            <p class="odr_list_c_p3">
+                                <span>你还可以 <a href="goodsList.html">继续购物</a></span>
+                                <button class="odr_list_c_act">立即结算</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--尾部开始-->
+        <div class="footer">
+            <div class="serColumn">
+                <div class="serColumn_wrap">
+                    <a href="#">
+                        <span class="serColumn_icon1"></span>
+                        正品保障
+                    </a>
+                    <a href="#">
+                        <span class="serColumn_icon2"></span>
+                        免息分期
+                    </a>
+                    <a href="#">
+                        <span class="serColumn_icon3"></span>
+                        全球联保
+                    </a>
+                    <a href="#">
+                        <span class="serColumn_icon4"></span>
+                        假一赔三
+                    </a>
+                    <a href="#">
+                        <span class="serColumn_icon5"></span>
+                        终身售后
+                    </a>
+                </div>
+            </div>
+            <div class="serGuid">
+                <div class="serGuid_wrap">
+                    <div class="serGuid_wrap_l">
+                        <p class="serGuid_wrap_l_p1">客服电话</p>
+                        <p class="serGuid_wrap_l_p2">400-883-2688</p>
+                        <p class="serGuid_wrap_l_p3">外呼号码 020-83931899</p>
+                        <p class="serGuid_wrap_l_p4"><a href="#">在线咨询</a></p>
+                    </div>
+                    <div class="serGuid_wrap_r">
+                        <dl>
+                            <dt>新手</dt>
+                            <dd>
+                                <a href="#">注册新会员</a>
+                                <a href="#">如何订购</a>
+                                <a href="#">正品保障</a>
+                                <a href="#">常见手表问题</a>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>支付</dt>
+                            <dd>
+                                <a href="#">支付方式</a>
+                                <a href="#">分期付款</a>
+                                <a href="#">发票说明</a>
+                                <a href="#">支付问题</a>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>配送</dt>
+                            <dd>
+                                <a href="#">包裹签收</a>
+                                <a href="#">配送方式</a>
+                                <a href="#">配送说明</a>
+                                <a href="#">自提流程</a>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>保障</dt>
+                            <dd>
+                                <a href="#">服务承诺</a>
+                                <a href="#">价格保护</a>
+                                <a href="#">七天退换说明</a>
+                                <a href="#">保修说明</a>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>帮助</dt>
+                            <dd>
+                                <a href="#">商务合作</a>
+                                <a href="#">分销加盟</a>
+                                <a href="#">严正声明</a>
+                                <a href="#">人才招聘</a>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="ft_info">
+                <div class="ft_info_coo">
+                    <div class="ft_info_coo_wrap">
+                        <a href="#">万表网app</a>
+                        <a href="#">大表哥app</a>
+                        <a href="#">网站联盟</a>
+                        <a href="#">新款手表</a>
+                        <a href="#">热销</a>
+                        <a href="#">万表天猫旗舰店</a>
+                        <a href="#">万表京东旗舰店</a>
+                        <a href="#">手表资讯</a>
+                        <a href="#">品牌大全</a>
+                        <a href="#">关于我们</a>
+                        <span>></span>
+                    </div>
+                </div>
+                <div class="ft_info_corp">
+                    <p>
+                        万表网名表商城 版权所有 2008-2016
+                        <a href="#">ICP备案证书号:粤ICP备09108738号</a>
+                        网监备案:4401060103141
+                    </p>
+                    <p>广州市万表科技股份有限公司 地址:广州市天河区珠江新城临江大道507号</p>
+                    <p>Copyright 2008-2016 WWW.WBIAO.CN.LTD ALL RIGHT RESERVED.</p>
+                </div>
+                <div class="ft_info_icon">
+                    <a href="#"><img src="img/ft-gzaic.gif" alt=""></a>
+                    <a href="#"><img src="img/ft-eca.jpg" alt=""></a>
+                    <a href="#"><img src="img/ft-cnnic_en.png" alt=""></a>
+                    <a href="#"><img src="img/ft-cert.png" alt=""></a>
+                    <a href="#"><img src="img/ft-gongshangxinxi.jpg" alt=""></a>
+                </div>
+                <div class="ft_info_frili">
+                    <div class="ft_info_frili_wrap">
+                        <span>友情链接:</span>
+                        <span class="ft_info_frili_fml">></span>
+                        <a href="#">联系QQ3268217127</a>
+                        <a href="#">折800网</a>
+                        <a href="#">名鞋库</a>
+                        <a href="#">万表世界</a>
+                        <a href="#">手表名表</a>
+                        <a href="#">衣联网</a>
+                        <a href="#">华为官网</a>
+                        <a href="#">乐视手机</a>
+                        <a href="#">音乐巴士</a>
+                        <a href="#">畅途网</a>
+                        <a href="#">拍鞋网</a>
+                        <a href="#">八百方</a>
+                        <a href="#">马可波罗网</a>
+                        <a href="#">家具网</a>
+                        <a href="#">家具网</a>
+                        <a href="#">太平洋家居网产品库</a>
+                        <a href="#">聚美优品优惠券</a>
+                        <a href="#">股城网</a>
+                    </div>
+                </div>
+            </div>
+
+            <!--<div class="address"></div>-->
+        </div>
+        <!--尾部结束-->
+    </div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+
+.header{
+    width: 1000px;
+    margin: auto;
+    position: relative;
+    height: 115px;
+}
+.logo{
+    position: absolute;
+    top:52px;
+    float: left;
+    height: 47px;
+    overflow: hidden;
+}
+.logo a{
+    background: url("../img/reg_logo.jpg") no-repeat;
+    display: inline-block;
+    width: 94px;
+    height: 47px;
+    margin-left: 5px;
+}
+.lg_sp{
+    display: inline-block;
+    font-size: 22px;
+    vertical-align: top;
+    padding-left: 18px;
+}
+.regMsg{
+    width: 1000px;
+    position: relative;
+    padding: 15px 0 70px 0;
+    margin: 40px auto;
+    border: 1px solid #ccc;
+}
+
+.regMsg_t{
+    color: #666;
+    font-size: 24px;
+    line-height: 35px;
+    margin: 0 30px 55px 30px;
+    position: relative;
+}
+.regMsg_t_a{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    color: #666;
+    line-height: 35px;
+    text-decoration: underline;
+    font-size: 12px;
+}
+.regMsg_m{
+    width: 380px;
+    margin: 0 auto 50px;
+    height: 35px;
+}
+.regMsg_m ul li{
+    float: left;
+    display: inline;
+    /*border: 1px solid;*/
+    border-style: solid;
+    border-width: 1px 1px 1px 0px;
+    padding: 0 16px 0 26px;
+    line-height: 33px;
+    font-size: 14px;
+    position: relative;
+}
+.regMsg_m_act{
+    color: red;
+    border-color: red;
+    /*z-index: 1;*/
+}
+.regMsg_m .regMsg_m_li1{
+    padding-left: 18px;
+    /*border: 1px solid red;*/
+    /*border-style: solid ;*/
+    border-left-width: 1px ;
+}
+.regMsg_b{
+    width: 380px;
+    margin: auto;
+}
+.regMsg_b li{
+    position:relative;
+    line-height: 20px;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+.regMsg_b input[type="text"],.regMsg_b input[type="password"]{
+    border: 1px solid #ccc;
+    height: 38px;
+    width: 305px;
+    line-height: 38px;
+    padding: 0 20px;
+    font-size: 12px;
+    color: #a4a4a4;
+}
+.regMsg_b_p1,.regMsg_b_p2,.regMsg_b_p3{
+    position: absolute;
+    color: #a4a4a4;
+    /*display: block;*/
+    left: 7px;
+    top:40px;
+    white-space: nowrap;
+    padding-right: 15px;
+    /*color: #cc0100;*/
+    font-size: 12px;
+}
+.regMsg_b input[type="button"]{
+    display: block;
+    text-align: center;
+    height: 38px;
+    width: 345px;
+    line-height: 38px;
+    font-size: 18px;
+    color: #fff;
+    background: red;
+    border:1px solid red;
+    border-radius: 3px;
+    margin: 30px 0;
+    cursor: pointer;
+}

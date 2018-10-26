@@ -1,0 +1,34 @@
+[
+  {
+    "num":1,
+    "src":"bannerImg-1.jpg"
+  },
+  {
+    "num":2,
+    "src":"bannerImg-2.jpg"
+  },
+  {
+    "num":3,
+    "src":"bannerImg-3.jpg"
+  },
+  {
+    "num":4,
+    "src":"bannerImg-4.jpg"
+  },
+  {
+    "num":5,
+    "src":"bannerImg-5.jpg"
+  },
+  {
+    "num":6,
+    "src":"bannerImg-6.jpg"
+  },
+  {
+    "num":7,
+    "src":"bannerImg-7.jpg"
+  },
+  {
+    "num":8,
+    "src":"bannerImg-8.jpg"
+  }
+]

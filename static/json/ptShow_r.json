@@ -1,0 +1,98 @@
+{
+  "pt_slide":
+        {
+          "ht":[{"num":1, "src":"ht_bannerImg1.jpg","pro1":"高科技潜水表","pro2":"搭载氧化锆陶瓷表圈"},
+                  {"num":2, "src":"ht_bannerImg2.png","pro1":"全日历月相表","pro2":"特制弓形陀 减少20%上链时间"},
+                  {"num":3, "src":"ht_bannerImg3.png","pro1":"历史学家 古董手绘火焰纹","pro2":"工艺源于133年前"},
+                  {"num":4, "src":"ht_bannerImg4.jpg","pro1":"德式机械美学名表鉴赏","pro2":"德国制造 工业4.0"}],
+          "sale":[{"num":1, "src":"sl_bannerImg1.png","pro1":"德国原装NOMOS","pro2":"全场6.8折起"},
+                  {"num":2, "src":"sl_bannerImg2.png","pro1":"新品牌入驻，德国优立时","pro2":"全场5折起+送好礼"},
+                  {"num":3, "src":"sl_bannerImg3.png","pro1":"瑞士查梅斯限时秒杀","pro2":"信用卡分期0费率"},
+                  {"num":4, "src":"sl_bannerImg4.png","pro1":"瑞士芯，拉丁魂","pro2":"100%正品 名人的选择"}],
+          "new":[{"num":1, "src":"nw_bannerImg1.jpg","pro1":"法国赫柏林，秒变神级偶像","pro2":"满999减150"},
+                  {"num":2, "src":"nw_bannerImg2.png","pro1":"2016巴塞尔新款","pro2":"全球限量100枚"},
+                  {"num":3, "src":"nw_bannerImg3.png","pro1":"库尔沃2016巴塞尔新款","pro2":"仅需￥18,560"},
+                  {"num":4, "src":"nw_bannerImg4.png","pro1":"“粉红佳人”微绘樱花女表","pro2":"2016瑞士巴塞尔新品"}]
+        },
+
+  "pt_l":
+        {
+          "ht":[{"num":1, "src":"ht_ptShow_lt1.jpg", "pro":"6.9mm超薄正装表", "price":"儒雅蓝血贵族"}],
+          "sale":[{"num":1, "src":"sl_ptShow_lt1.jpg", "pro":"6.9mm超薄正装表", "price":"儒雅蓝血贵族"}],
+          "new":[{"num":1, "src":"nw_ptShow_lt1.jpg", "pro":"德国莫勒：145周年纪念款", "price":"全球限量145枚"}]
+        },
+
+  "pt_r":
+        {
+            "ht":[{"num":1, "src":"ht_ptShow_rt1.png", "pro":"浪琴名匠系列", "price":"7.9折￥12,160"},
+                  {"num":2, "src":"ht_ptShow_rt2.png", "pro":"欧米茄海马系列", "price":"7.5折 大牌秒杀"},
+                  {"num":3, "src":"ht_ptShow_rt3.jpg", "pro":"法国赫柏林", "price":"买送钢带"},
+                  {"num":4, "src":"ht_ptShow_rt4.jpg", "pro":"瑞士柏高梦想家", "price":"满999减120"}],
+          "sale":[{"num":1, "src":"sl_ptShow_rt1.jpg", "pro":"优立时歌德系列", "price":"原装进口 5折"},
+                  {"num":2, "src":"sl_ptShow_rt2.jpg", "pro":"大热蓝色帅气表", "price":"5.5折起特卖"},
+                  {"num":3, "src":"sl_ptShow_rt3.jpg", "pro":"海鸥商务系列", "price":"限时特卖 3.9折"},
+                  {"num":4, "src":"sl_ptShow_rt4.jpg", "pro":"欧米茄碟飞系列", "price":"正品联保 7.4折"}],
+          "new":[{"num":1, "src":"nw_ptShow_rt1.png", "pro":"万宝龙Star明星系列", "price":"￥17,550 7.8折"},
+                  {"num":2, "src":"nw_ptShow_rt2.png", "pro":"Sevenfriday", "price":"买即赠送U盘"},
+                  {"num":3, "src":"nw_ptShow_rt3.jpg", "pro":"精致镂空 雕花镀銠", "price":"闪耀欧洲锆石"},
+                  {"num":4, "src":"nw_ptShow_rt4.jpg", "pro":"拉丁血统的瑞士表", "price":"满999减120"}]
+        },
+
+  "logo":
+        {
+          "ht":[{"num":1, "src":"ht_brandLogo_1.png", "pro":"天梭"},
+                {"num":2, "src":"ht_brandLogo_2.png", "pro":"浪琴"},
+                {"num":3, "src":"ht_brandLogo_3.png", "pro":"欧米茄"},
+                {"num":4, "src":"ht_brandLogo_4.png", "pro":"美度"},
+                {"num":5, "src":"ht_brandLogo_5.png", "pro":"优立时"},
+                {"num":6, "src":"ht_brandLogo_6.png", "pro":"DAVOSA"}],
+          "sale":[{"num":1, "src":"sl_brandLogo_1.png", "pro":"天梭"},
+                  {"num":2, "src":"sl_brandLogo_2.png", "pro":"赫柏林"},
+                  {"num":3, "src":"sl_brandLogo_3.png", "pro":"泰格豪雅"},
+                  {"num":4, "src":"sl_brandLogo_4.png", "pro":"NOMOS"},
+                  {"num":5, "src":"sl_brandLogo_5.png", "pro":"古驰"},
+                  {"num":6, "src":"sl_brandLogo_6.png", "pro":"C罗表"}],
+          "new":[{"num":1, "src":"nw_brandLogo_1.png", "pro":"亨利慕时"},
+                  {"num":2, "src":"nw_brandLogo_2.png", "pro":"波尔"},
+                  {"num":3, "src":"nw_brandLogo_3.png", "pro":"依波路"},
+                  {"num":4, "src":"nw_brandLogo_4.png", "pro":"爱宝时"},
+                  {"num":5, "src":"nw_brandLogo_5.png", "pro":"阿玛尼"},
+                  {"num":6, "src":"nw_brandLogo_6.png", "pro":"雍加毕索"}]
+        },
+
+  "brand":[{"num":1, "src1":"brd_Img1.png","src2":"brd_logo1.png","pro":"浪琴：不负时光认真爱"},
+            {"num":2, "src1":"brd_Img2.png","src2":"brd_logo2.png","pro":"瑞士著名钟表制造商"},
+            {"num":3, "src1":"brd_Img3.png","src2":"brd_logo3.png","pro":"赫柏林：瑞士芯，法国魂"},
+            {"num":4, "src1":"brd_Img4.png","src2":"brd_logo4.png","pro":"美度：灵感源于建筑"},
+            {"num":5, "src1":"brd_Img5.png","src2":"brd_logo5.png","pro":"艾美达：只为懂得欣赏"},
+            {"num":6, "src1":"brd_Img6.png","src2":"brd_logo6.png","pro":"莫勒：只为精准计时而生"},
+            {"num":7, "src1":"brd_Img7.png","src2":"brd_logo7.png","pro":"DAVOSA：你能拥有的奢华"},
+            {"num":8, "src1":"brd_Img8.png","src2":"brd_logo8.png","pro":"爱宝时：制表工艺 世代典藏"}],
+
+  "like":
+        {
+          "lk_l":[{"num":1,"src1":"lk_guess_lt1.png","src2":"lk_guess_lt2.png","pro1":"浪琴名匠","pro2":"天梭力洛克","pro3":"原装德国表","pro4":"情侣对表","pro5":"sevenfriday","pro6":"最具个性表"}],
+          "lk_r":[{"num":1,"src1":"lk_guess_rt1.jpg","pro1":"雅克利曼-Classic经典系列 1-1654B男士石英表","pro2":"￥790","pro3":"【6.8折】"},
+                  {"num":2,"src1":"lk_guess_rt2.jpg","pro1":"赫柏林 City 都市系列 男士机械表","pro2":"￥5380","pro3":"【7.8折】"},
+                  {"num":3,"src1":"lk_guess_rt3.jpg","pro1":"迪沃斯 Diving 潜水系列 男士机械表","pro2":"￥5580","pro3":"【8折】"},
+                  {"num":4,"src1":"lk_guess_rt4.jpg","pro1":"百达翡丽Patek Philippe-Sky Moon Tourbillon Ref.5002P机械男表","pro2":"￥17600000","pro3":"10折"}]
+        },
+
+  "share":[{"num":1, "src":"shareShowImg1.jpg","pro":"爱宝时：最有诚意的晒表分享"},
+    {"num":2, "src":"shareShowImg1.jpg","pro":"爱宝时：最有诚意的晒表分享"},
+    {"num":3, "src":"shareShowImg1.jpg","pro":"爱宝时：最有诚意的晒表分享"},
+    {"num":4, "src":"shareShowImg1.jpg","pro":"爱宝时：最有诚意的晒表分享"}
+    ],
+
+  "shop_news":
+        {
+          "shop":{},
+          "news":[{"num":1, "proh6":"[手表评论]", "proa1":"• 手表收到了，非常喜欢，实物比商品介绍中的图片都漂亮！太棒啦！赞赞赞！！！工号68号，小魏，谢谢您帮我推荐，并且耐心的帮我介绍！宝贝真的很满意！谢谢您！精准度等我佩戴一段时间，再过来评价，想来绝不会失望的……哈哈完美！", "proa2":"• 爱宝时水蓝和爱罗蓝盘女表一起订购的，这两块表都不错 表盘的颜色很是喜欢 刚戴上的时候感觉表盘有点大 过几天适应了觉得还好 走时准确 包装完好 客服小玲耐心周到 细致热情 本次购物全程愉快 感谢商家", "proa3":"• 使用10天，感觉走时很精准，每天慢5秒左右，雪白的表盘很适合我，值得拥有！", "proa4":"• 我要感谢138号客服小万,从看表到购表、再到售后,都是有问必答。昨天天早上9点刚收到货,拿到售后点去验证了,的确是正品,我要说那些准备入手这款腕表的宝宝们,大可不必担心蓝色的表盘会不好搭衣服~不在强光下、仔细看的话基本上都会以为是黑色的。一次很愉快的网购,以后还会再来的!", "proa5":" • 手表收到了，很惊喜，比想象的还要满意，谢谢木木的耐心讲解，解决了我很多疑虑，今天把表带截取了立马就戴上了，哈哈，同事都说很好看，没有失望，戴着很秀气，更像手链了，大小是我想要的，很高大上"}, {"num":2, "proh6":"[手表专题]", "proa1":"• 机械表如何上弦吗", "proa2":"• 西铁城商务手表", "proa3":"• 飞虎手表赞助商", "proa4":"• 买天梭还是西铁城", "proa5":"• 扬州天梭手表"}, {"num":3, "proh6":"[手表学院]", "proa1":"• 华米Amazfit运动手表 带你扔掉手机去跑步带你飞", "proa2":"• 路易威登推出Escale Spin Time腕表，给你不一样的腕表", "proa3":"• 第三届尚蒂伊古董车大展(老爷车风雅巡展)隆重举行  ", "proa4":"• 国际级布鲁斯音乐盛宴给你不一样的月圆中秋   ", "proa5":"• 1001只“夜光奇宝兔”于2016年9月9日登陆奕欧来上海购物村"}]
+        },
+
+  "qrcode":[{"num":1, "src":"qr1.png","pro1":"万表商城客户端","pro2":"手机支付再减30元"},
+            {"num":2, "src":"qr2.png","pro1":"万表达人服务号","pro2":"全球买表 国内保修"},
+            {"num":3, "src":"qr3.png","pro1":"万表微信服务号","pro2":"每周推送打折促销活动信息"},
+            {"num":4, "src":"qr4.png","pro1":"万表微信资讯号","pro2":"每日推送手表干货文章"}]
+}
+
