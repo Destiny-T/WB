@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <title>万表网</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/swiper.css">
     <link rel="shortcut icon" href="/static/img/title_icon.ico">
+    <script type="text/javascript" src="/static/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/static/js/swiper.js"></script>
     <script type="text/javascript" src="/static/js/jquery-1.12.3.js"></script>
     <script type="text/javascript" src="/static/js/jquery.cookie.js"></script>
     <link rel="stylesheet" href="/static/css/styleAll.css">
@@ -645,9 +649,33 @@
         <!--头部结束-->
 
         <!--轮播图部分开始-->
-        <div class="banner">
-            <div class="banSlide">
-                <ul class="bigpic">
+
+{#         <div class="swiper-container" id="topSwiper">#}
+{#                <div class="swiper-wrapper">#}
+{#                    {% for img in b_imgs %}#}
+{#                        <div class="swiper-slide">#}
+{#                            <img src="{{ img.b_img }}" alt="">#}
+{#                        </div>#}
+{#                    {% endfor %}#}
+{#                </div>#}
+{#                <!-- Add Pagination -->#}
+{#                <div class="swiper-pagination"></div>#}
+{#         </div>#}
+        <div class="banner" id="topswiper">
+{#
+             <div class="swiper-container" id="topSwiper">
+                <div class="swiper-wrapper">
+                    {% for img in b_imgs %}
+                        <div class="swiper-slide">
+                            <img src="{{ img.b_img }}" alt="">
+                        </div>
+                    {% endfor %}
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+
+
 
 
                     <!--<li><img src="img/bannerImg-1.jpg" alt=""></li>-->
@@ -658,20 +686,20 @@
                     <!--<li><img src="img/bannerImg-6.jpg" alt=""></li>-->
                     <!--<li><img src="img/bannerImg-7.jpg" alt=""></li>-->
                     <!--<li><img src="img/bannerImg-8.jpg" alt=""></li>-->
-                </ul>
-                <ul class="smallIndex">
-                    <li class="active"><a href="#" ></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                    <li><a href="#"></a></li>
-                </ul>
-                <span  class="prev"></span>
-                <span  class="next"></span>
-            </div>
+{#                </ul>#}
+{#                <ul class="smallIndex">#}
+{#                    <li class="active"><a href="#" ></a></li>#}
+{#                    <li><a href="#"></a></li>#}
+{#                    <li><a href="#"></a></li>#}
+{#                    <li><a href="#"></a></li>#}
+{#                    <li><a href="#"></a></li>#}
+{#                    <li><a href="#"></a></li>#}
+{#                    <li><a href="#"></a></li>#}
+{#                    <li><a href="#"></a></li>#}
+{#                </ul>#}
+{#                <span  class="prev"></span>#}
+{#                <span  class="next"></span>#}
+{#            </div>#}
             <div class="introColumn">
                 <div class="subIntro">
                     <ul>
@@ -720,7 +748,7 @@
 
             </div>
         </div>
-        <!--轮播图部分结束-->
+{#        <!--轮播图部分结束-->#}
 
         <!--内容部分开始-->
         <div class="indexContent">

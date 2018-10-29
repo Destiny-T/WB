@@ -1,3 +1,4 @@
+import hashlib
 import uuid
 
 from django.contrib.auth import logout
@@ -6,15 +7,18 @@ from django.shortcuts import render, redirect
 
 
 # Create your views here.
-from App.models import Banner, User
+from App.models import User, Banner
 
 
 # 首页
 def index(request):
     token = request.session.get('token')
+    b_imgs = Banner.objects.all()
     
 
-    response_data = {}
+    response_data = {
+        'b_imgs':b_imgs,
+    }
 
     if token:
         user = User.objects.get(token=token)
@@ -28,7 +32,7 @@ def index(request):
 def register(request):
     if request.method == 'POST':
         username = request.POST.get('username')
-        password = request.POST.get('password')
+        password = generate_password(request.POST.get('password'))
 
         user = User()
 
@@ -54,7 +58,7 @@ def login(request):
 
         try:
             user = User.objects.get(username=username)
-            if user.password != password:
+            if user.password != generate_password(password):
                 return render(request,'login.html')
             else:
                 user.token = str(uuid.uuid5(uuid.uuid4(),'login'))
@@ -69,9 +73,14 @@ def login(request):
         return render(request,'login.html')
 
 
+def generate_password(password):
+    sha = hashlib.sha512()
+    sha.update(password.encode('utf-8'))
+    return sha.hexdigest()
+
 # 退出登录
 def quit(request):
     logout(request)
-    return redirect('wb:home')
+    return redirect('wb:index')
 
 
