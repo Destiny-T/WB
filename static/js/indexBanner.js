@@ -3,12 +3,12 @@
  */
 $(function(){
 
-    利用json获取动态图片
-    $.getJSON("", function (data) {
+    // 利用json获取动态图片
+    $.getJSON("/static/json/banner.json", function (data) {
         $.each(data,function(i) {
             console.log(data[i].src);
             var li=$("<li></li>");
-            $("<img/>").attr("src", "img/"+data[i].src).appendTo(li);
+            $("<img/>").attr("src", "/static/img/"+data[i].src).appendTo(li);
             li.appendTo(".bigpic");
         });
 

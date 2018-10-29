@@ -1,11 +1,18 @@
 import uuid
 
 from django.contrib.auth import logout
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 
 
 # Create your views here.
 from App.models import Banner, User
+
+def base(request):
+    return render(request,'base.html')
+
+def home(request):
+    return render(request,'home.html')
 
 
 def index(request):
@@ -19,6 +26,7 @@ def index(request):
         response_data['name'] = user.username
 
     return render(request,'index.html',context=response_data)
+
 
 
 
@@ -52,7 +60,7 @@ def login(request):
         try:
             user = User.objects.get(username=username)
             if user.password != password:
-                return render(request,'login.html',context={'error':'密码错误'})
+                return render(request,'login.html')
             else:
                 user.token = str(uuid.uuid5(uuid.uuid4(),'login'))
                 user.save()
@@ -61,7 +69,7 @@ def login(request):
                 return redirect('wb:index')
 
         except:
-            return render(request,'login.html',context={'error':'用户名输入有误'})
+            return render(request,'login.html')
     elif request.method == 'GET':
         return render(request,'login.html')
 
@@ -72,5 +80,3 @@ def quit(request):
     return redirect('wb:index')
 
 
-def banner(request):
-    return None

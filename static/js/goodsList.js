@@ -2,7 +2,7 @@
  * Created by Administrator on 2016/9/21.
  */
 $(function () {
-    $.getJSON("json/goodsList.json", function (data) {
+    $.getJSON("/static/json/goodsList.json", function (data) {
         $.each(data, function (i) {
             var li=$("<li class='gdList_r_m_list_li'></li>");
             var id=$("<i class='id' style='display: none'></i>");

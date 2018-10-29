@@ -3,7 +3,7 @@
  */
 $(function(){
     //利用json获取动态图片
-    $.getJSON("json/ptShow_r.json", function (data) {
+    $.getJSON("/static/json/ptShow_r.json", function (data) {
         $.each(data.pt_slide.ht,function(i) {
             var a=$("<a class='ht_ban_a' href='#'></a>");
             var div=$("<div class='ht_title'></div>");
@@ -13,7 +13,7 @@ $(function(){
             p2.appendTo(div);
             p1.html(data.pt_slide.ht[i].pro1);
             p2.html(data.pt_slide.ht[i].pro2);
-            $("<img>").attr("src", "img/"+data.pt_slide.ht[i].src).appendTo(a);
+            $("<img>").attr("src", "/static/img/"+data.pt_slide.ht[i].src).appendTo(a);
             div.appendTo(a);
             a.appendTo(".hot_banner_view_pt");
         });
@@ -26,7 +26,7 @@ $(function(){
             p2.appendTo(div);
             p1.html(data.pt_slide.sale[i].pro1);
             p2.html(data.pt_slide.sale[i].pro2);
-            $("<img>").attr("src", "img/"+data.pt_slide.sale[i].src).appendTo(a);
+            $("<img>").attr("src", "/static/img/"+data.pt_slide.sale[i].src).appendTo(a);
             div.appendTo(a);
             a.appendTo(".sale_banner_view_pt");
         });
@@ -39,7 +39,7 @@ $(function(){
             p2.appendTo(div);
             p1.html(data.pt_slide.new[i].pro1);
             p2.html(data.pt_slide.new[i].pro2);
-            $("<img>").attr("src", "img/"+data.pt_slide.new[i].src).appendTo(a);
+            $("<img>").attr("src", "/static/img/"+data.pt_slide.new[i].src).appendTo(a);
             div.appendTo(a);
             a.appendTo(".new_banner_view_pt");
         });
@@ -51,7 +51,7 @@ $(function(){
             p1.appendTo(a);
             p2.appendTo(a);
             p3.appendTo(a);
-            $("<img>").attr("src", "img/"+data.pt_l.ht[i].src).appendTo(p1);
+            $("<img>").attr("src", "/static/img/"+data.pt_l.ht[i].src).appendTo(p1);
             p2.html(data.pt_l.ht[i].pro);
             p3.html(data.pt_l.ht[i].price);
             a.appendTo(".ht_ptShow_l");
@@ -64,7 +64,7 @@ $(function(){
             p1.appendTo(a);
             p2.appendTo(a);
             p3.appendTo(a);
-            $("<img>").attr("src", "img/"+data.pt_l.sale[i].src).appendTo(p1);
+            $("<img>").attr("src", "/static/img/"+data.pt_l.sale[i].src).appendTo(p1);
             p2.html(data.pt_l.sale[i].pro);
             p3.html(data.pt_l.sale[i].price);
             a.appendTo(".sl_ptShow_l");
@@ -77,7 +77,7 @@ $(function(){
             p1.appendTo(a);
             p2.appendTo(a);
             p3.appendTo(a);
-            $("<img>").attr("src", "img/"+data.pt_l.new[i].src).appendTo(p1);
+            $("<img>").attr("src", "/static/img/"+data.pt_l.new[i].src).appendTo(p1);
             p2.html(data.pt_l.new[i].pro);
             p3.html(data.pt_l.new[i].price);
             a.appendTo(".nw_ptShow_l");
@@ -91,7 +91,7 @@ $(function(){
             p2.appendTo(div);
             p1.html(data.pt_r.ht[i].pro);
             p2.html(data.pt_r.ht[i].price);
-            $("<img>").attr("src", "img/"+data.pt_r.ht[i].src).appendTo(a);
+            $("<img>").attr("src", "/static/img/"+data.pt_r.ht[i].src).appendTo(a);
             div.appendTo(a);
             a.appendTo(".ht_ptShow_r");
         });
@@ -104,7 +104,7 @@ $(function(){
             p2.appendTo(div);
             p1.html(data.pt_r.sale[i].pro);
             p2.html(data.pt_r.sale[i].price);
-            $("<img>").attr("src", "img/"+data.pt_r.sale[i].src).appendTo(a);
+            $("<img>").attr("src", "/static/img/"+data.pt_r.sale[i].src).appendTo(a);
             div.appendTo(a);
             a.appendTo(".sl_ptShow_r");
         });
@@ -117,14 +117,14 @@ $(function(){
             p2.appendTo(div);
             p1.html(data.pt_r.new[i].pro);
             p2.html(data.pt_r.new[i].price);
-            $("<img>").attr("src", "img/"+data.pt_r.new[i].src).appendTo(a);
+            $("<img>").attr("src", "/static/img/"+data.pt_r.new[i].src).appendTo(a);
             div.appendTo(a);
             a.appendTo(".nw_ptShow_r");
         });
         $.each(data.logo.ht, function (i) {
             var a=$("<a class='all_brandLogo_wrap_a' href='#'></a>");
             var it=$("<i style='display: none'></i>");
-            $("<img>").attr("src", "img/"+data.logo.ht[i].src).appendTo(a);
+            $("<img>").attr("src", "/static/img/"+data.logo.ht[i].src).appendTo(a);
             it.appendTo(a);
             it.html(data.logo.ht[i].pro);
             a.appendTo(".ht_brandLogo_wrap");
@@ -132,7 +132,7 @@ $(function(){
         $.each(data.logo.sale, function (i) {
             var a=$("<a class='all_brandLogo_wrap_a' href='#'></a>");
             var it=$("<i style='display: none'></i>");
-            $("<img>").attr("src", "img/"+data.logo.sale[i].src).appendTo(a);
+            $("<img>").attr("src", "/static/img/"+data.logo.sale[i].src).appendTo(a);
             it.appendTo(a);
             it.html(data.logo.sale[i].pro);
             a.appendTo(".sl_brandLogo_wrap");
@@ -140,7 +140,7 @@ $(function(){
         $.each(data.logo.new, function (i) {
             var a=$("<a class='all_brandLogo_wrap_a' href='#'></a>");
             var it=$("<i style='display: none'></i>");
-            $("<img>").attr("src", "img/"+data.logo.new[i].src).appendTo(a);
+            $("<img>").attr("src", "/static/img/"+data.logo.new[i].src).appendTo(a);
             it.appendTo(a);
             it.html(data.logo.new[i].pro);
             a.appendTo(".new_brandLogo_wrap");
@@ -150,8 +150,8 @@ $(function(){
             var p1=$("<p class='brand_msg_p1'></p>");
             var p2=$("<p class='brand_msg_p2'></p>");
             var p3=$("<p class='brand_msg_p3'></p>");
-            $("<img>").attr("src", "img/"+data.brand[i].src1).appendTo(p1);
-            $("<img>").attr("src", "img/"+data.brand[i].src2).appendTo(p2);
+            $("<img>").attr("src", "/static/img/"+data.brand[i].src1).appendTo(p1);
+            $("<img>").attr("src", "/static/img/"+data.brand[i].src2).appendTo(p2);
             p3.html(data.brand[i].pro);
             p1.appendTo(a);
             p2.appendTo(a);
@@ -160,9 +160,9 @@ $(function(){
         });
         $.each(data.like.lk_l, function (i) {
             var a1=$("<a  href='#'></a>");
-            $("<img>").attr("src", "img/"+data.like.lk_l[i].src1).appendTo(a1);
+            $("<img>").attr("src", "/static/img/"+data.like.lk_l[i].src1).appendTo(a1);
             var a2=$("<a  href='#'></a>");
-            $("<img>").attr("src", "img/"+data.like.lk_l[i].src2).appendTo(a2);
+            $("<img>").attr("src", "/static/img/"+data.like.lk_l[i].src2).appendTo(a2);
             var div=$("<div class='lk_guess_l_txt'></div>");
             var diva1=$("<a  href='#'></a>");
             var diva2=$("<a  href='#'></a>");
@@ -188,7 +188,7 @@ $(function(){
         });
         $.each(data.like.lk_r, function (i) {
             var a=$("<a  href='#'></a>");
-            $("<img>").attr("src", "img/"+data.like.lk_r[i].src1).appendTo(a);
+            $("<img>").attr("src", "/static/img/"+data.like.lk_r[i].src1).appendTo(a);
             var div=$("<div class='lk_guess_r_wrap_a_msg'></div>");
             var h3=$("<h3></h3>");
             h3.html(data.like.lk_r[i].pro1);
@@ -207,7 +207,7 @@ $(function(){
         $.each(data.share, function (i) {
             var a=$("<a class='shareShow_a' href='#'></a>");
             var p1=$("<p class='shareShow_a_p1'></p>");
-            $("<img>").attr("src", "img/"+data.share[i].src).appendTo(p1);
+            $("<img>").attr("src", "/static/img/"+data.share[i].src).appendTo(p1);
             var p2=$("<p class='shareShow_a_p2'></p>");
             p1.appendTo(a);
             p2.appendTo(a);
@@ -241,7 +241,7 @@ $(function(){
         $.each(data.qrcode, function (i) {
             var a=$("<a class='qr_a' href='#'></a>");
             var div1=$("<div class='qr_a_t'></div>");
-            $("<img>").attr("src", "img/"+data.qrcode[i].src).appendTo(div1);
+            $("<img>").attr("src", "/static/img/"+data.qrcode[i].src).appendTo(div1);
             var div2=$("<div class='qr_a_b'></div>");
             var p1=$("<p class='qr_a_b_1'></p>");
             var p2=$("<p class='qr_a_b_2'></p>");
