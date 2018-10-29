@@ -8,13 +8,8 @@ from django.shortcuts import render, redirect
 # Create your views here.
 from App.models import Banner, User
 
-def base(request):
-    return render(request,'base.html')
 
-def home(request):
-    return render(request,'home.html')
-
-
+# 首页
 def index(request):
     token = request.session.get('token')
     
@@ -29,7 +24,7 @@ def index(request):
 
 
 
-
+# 注册
 def register(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -51,7 +46,7 @@ def register(request):
     elif request.method == 'GET':
         return render(request, 'register.html')
 
-
+# 登录
 def login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -74,9 +69,9 @@ def login(request):
         return render(request,'login.html')
 
 
-
+# 退出登录
 def quit(request):
     logout(request)
-    return redirect('wb:index')
+    return redirect('wb:home')
 
 
