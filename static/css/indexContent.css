@@ -1132,6 +1132,7 @@
 .news{
     width: 890px;
     float: right;
+    height: 311.3px;
 }
 .news_header{
     margin-bottom: 10px;
@@ -1161,7 +1162,7 @@
     border-top: 1px solid #e5e5e5;
     border-bottom: 1px solid #e5e5e5;
     padding: 40px 0 53px 0;
-    height: 177px;
+    height: 311.3px;
 }
 .newsList li{
     float: left;

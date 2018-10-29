@@ -662,12 +662,13 @@
 {#                <div class="swiper-pagination"></div>#}
 {#         </div>#}
         <div class="banner" id="topswiper">
-{#
              <div class="swiper-container" id="topSwiper">
                 <div class="swiper-wrapper">
                     {% for img in b_imgs %}
                         <div class="swiper-slide">
-                            <img src="{{ img.b_img }}" alt="">
+                            <a href="#">
+                                <img src="{{ img.b_img }}" alt="">
+                            </a>
                         </div>
                     {% endfor %}
                 </div>
