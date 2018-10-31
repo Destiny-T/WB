@@ -11,3 +11,15 @@ class User(models.Model):
 
 class Banner(models.Model):
     b_img = models.CharField(max_length=50)
+
+class Hotbanner(models.Model):
+    img = models.CharField(max_length=100)
+    name = models.CharField(max_length=40)
+    function = models.CharField(max_length=40)
+
+class Goods(models.Model):
+    g_name = models.CharField(max_length=100)
+    g_price = models.CharField(max_length=50)
+    g_red = models.CharField(max_length=30)
+    g_num = models.CharField(max_length=50)
+    g_src = models.CharField(max_length=100)

@@ -7,17 +7,19 @@ from django.shortcuts import render, redirect
 
 
 # Create your views here.
-from App.models import User, Banner
+from App.models import User, Banner, Goods, Hotbanner
 
 
 # 首页
 def index(request):
     token = request.session.get('token')
     b_imgs = Banner.objects.all()
+    h_imgs = Hotbanner.objects.all()
     
 
     response_data = {
         'b_imgs':b_imgs,
+        'h_imgs':h_imgs,
     }
 
     if token:
@@ -84,3 +86,28 @@ def quit(request):
     return redirect('wb:index')
 
 
+def cart(request):
+    token = request.session.get('token')
+
+    response_data = {}
+
+    if token:
+        user = User.objects.get(token=token)
+        response_data['name'] = user.username
+
+    return render(request, 'addShopCart.html', context=response_data)
+
+
+def goods(request):
+    token = request.session.get('token')
+    goodsList = Goods.objects.all()
+
+    response_data = {
+        'goodsList':goodsList,
+    }
+
+    if token:
+        user = User.objects.get(token=token)
+        response_data['name'] = user.username
+
+    return render(request, 'goodsList.html', context=response_data)

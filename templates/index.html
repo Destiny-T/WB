@@ -66,11 +66,11 @@
 
                     </div>
 
-                    {% if name %}
+                        {% if name %}
                             <div class="loginBtn">
                                 <span>|</span>
                                 <a href="{% url 'wb:quit' %}">退出登录</a>
-                            </div>
+                        </div>
                         {% endif %}
                 </div>
             </div>
@@ -632,7 +632,7 @@
                             </div>
                         </div>
                         <div class="submenuNav">
-                            <a href="#">闪购</a>
+                            <a href="{% url 'wb:goods' %}">闪购</a>
                         </div>
                         <div class="submenuNav">
                             <a href="#">海外购</a>
@@ -650,34 +650,16 @@
 
         <!--轮播图部分开始-->
 
-{#         <div class="swiper-container" id="topSwiper">#}
-{#                <div class="swiper-wrapper">#}
-{#                    {% for img in b_imgs %}#}
-{#                        <div class="swiper-slide">#}
-{#                            <img src="{{ img.b_img }}" alt="">#}
-{#                        </div>#}
-{#                    {% endfor %}#}
-{#                </div>#}
-{#                <!-- Add Pagination -->#}
-{#                <div class="swiper-pagination"></div>#}
-{#         </div>#}
-        <div class="banner" id="topswiper">
-             <div class="swiper-container" id="topSwiper">
-                <div class="swiper-wrapper">
-                    {% for img in b_imgs %}
-                        <div class="swiper-slide">
-                            <a href="#">
-                                <img src="{{ img.b_img }}" alt="">
-                            </a>
-                        </div>
-                    {% endfor %}
-                </div>
-                <!-- Add Pagination -->
-                <div class="swiper-pagination"></div>
-            </div>
-
-
-
+        <div class="banner">
+            <div class="banSlide">
+                <ul class="bigpic">
+                    
+                        {% for b_img in b_imgs %}
+                            <li style="opacity: inherit">
+                                <img src="{{ b_img.b_img }}" alt="">
+                            </li>
+                        {% endfor %}
+                        
 
                     <!--<li><img src="img/bannerImg-1.jpg" alt=""></li>-->
                     <!--<li><img src="img/bannerImg-2.jpg" alt=""></li>-->
@@ -687,20 +669,20 @@
                     <!--<li><img src="img/bannerImg-6.jpg" alt=""></li>-->
                     <!--<li><img src="img/bannerImg-7.jpg" alt=""></li>-->
                     <!--<li><img src="img/bannerImg-8.jpg" alt=""></li>-->
-{#                </ul>#}
-{#                <ul class="smallIndex">#}
-{#                    <li class="active"><a href="#" ></a></li>#}
-{#                    <li><a href="#"></a></li>#}
-{#                    <li><a href="#"></a></li>#}
-{#                    <li><a href="#"></a></li>#}
-{#                    <li><a href="#"></a></li>#}
-{#                    <li><a href="#"></a></li>#}
-{#                    <li><a href="#"></a></li>#}
-{#                    <li><a href="#"></a></li>#}
-{#                </ul>#}
-{#                <span  class="prev"></span>#}
-{#                <span  class="next"></span>#}
-{#            </div>#}
+                </ul>
+                <ul class="smallIndex">
+                    <li class="active"><a href="#" ></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+                <span  class="prev"></span>
+                <span  class="next"></span>
+            </div>
             <div class="introColumn">
                 <div class="subIntro">
                     <ul>
@@ -771,6 +753,16 @@
                             <div class="hot_banner_">
                                 <div class="hot_banner_view">
                                     <div class="hot_banner_view_pt">
+{#                                        {% for h_img in h_imgs %}#}
+{#                                            <a href="#" class="ht_ban_a">#}
+{#                                                <img src="{{ h_img.img }}" alt="">#}
+{#                                            </a>#}
+{#                                            <div class="ht_title">#}
+{#                                                <p>{{ h_img.name }}</p>#}
+{#                                                <p>{{ h_img.function }}</p>#}
+{#                                            </div>#}
+{#                                        {% endfor %}#}
+
                                         <!--<a href="#" class="ht_ban_a">-->
                                             <!--&lt;!&ndash;<img src="img/ht_bannerImg1.jpg" alt="">&ndash;&gt;-->
                                             <!--<div class="ht_title">-->
@@ -1225,7 +1217,7 @@
         <div class="panelW">
             <div class="panelW_wrap">
                 <div class="pl_b">
-                    <a href="#" class="pl_b_a1">
+                    <a href="{% url 'wb:cart' %}" class="pl_b_a1">
                         <em class=""></em>
                         <b class="">购物车</b>
                         <i class=""></i>
