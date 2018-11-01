@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>购物车</title>
-    <link rel="shortcut icon" href="img/title_icon.ico">
-    <link rel="stylesheet" href="css/styleAll.css">
-    <link rel="stylesheet" href="css/clearShopCart.css">
-    <link rel="stylesheet" href="css/indexFooter.css">
-    <script type="text/javascript" src="js/jquery-1.12.3.js"></script>
-    <script type="text/javascript" src="js/jquery.cookie.js"></script>
-    <script type="text/javascript" src="js/addShopCart.js"></script>
-    <script type="text/javascript" src="js/clearShopCart.js"></script>
+    <link rel="shortcut icon" href="/static/img/title_icon.ico">
+    <link rel="stylesheet" href="/static/css/styleAll.css">
+    <link rel="stylesheet" href="/static/css/clearShopCart.css">
+    <link rel="stylesheet" href="/static/css/indexFooter.css">
+    <script type="text/javascript" src="/static/js/jquery-1.12.3.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/static/js/addShopCart.js"></script>
+    <script type="text/javascript" src="/static/js/clearShopCart.js"></script>
 </head>
 <body>
     <div>
@@ -32,10 +32,10 @@
                 <div class="h_s_wrap">
                     <div class="logo">
                         <a href="#">
-                            <img src="img/cartLogo-ico.jpg" alt="">
+                            <img src="/static/img/cartLogo-ico.jpg" alt="">
                         </a>
                         <span>
-                            <img src="img/cartLogoname.jpg" alt="">
+                            <img src="/static/img/cartLogoname.jpg" alt="">
                         </span>
                     </div>
 
@@ -79,6 +79,23 @@
                                 </tbody>
                             </table>
                         </div>
+
+                        <div class="odr_list_g">
+                            <table class="odr_goods">
+                                <tbody>
+                                    <tr class="gds_tr1">
+                                        <th class="gds_tr1_th1">
+                                            <img src="{{ good.g_src }}" alt="">
+                                        </th>
+                                        <th class="gds_tr1_th2">{{ good.g_price }}</th>
+                                        <th class="gds_tr1_th3">{{ good.g_price }}</th>
+                                        <th class="gds_tr1_th4">{{ good.g_num }}</th>
+                                        <th class="gds_tr1_th5">{{ good.g_num }}</th>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
                         <div class="odr_list_c">
                             <p class="odr_list_c_p1">商品总额：<span>￥<span class="odr_list_c_sum">3337</span></span></p>
                             <p class="odr_list_c_p2">共节省：￥<span class="odr_list_c_save">1113</span></p>
@@ -200,11 +217,11 @@
                     <p>Copyright 2008-2016 WWW.WBIAO.CN.LTD ALL RIGHT RESERVED.</p>
                 </div>
                 <div class="ft_info_icon">
-                    <a href="#"><img src="img/ft-gzaic.gif" alt=""></a>
-                    <a href="#"><img src="img/ft-eca.jpg" alt=""></a>
-                    <a href="#"><img src="img/ft-cnnic_en.png" alt=""></a>
-                    <a href="#"><img src="img/ft-cert.png" alt=""></a>
-                    <a href="#"><img src="img/ft-gongshangxinxi.jpg" alt=""></a>
+                    <a href="#"><img src="/static/img/ft-gzaic.gif" alt=""></a>
+                    <a href="#"><img src="/static/img/ft-eca.jpg" alt=""></a>
+                    <a href="#"><img src="/static/img/ft-cnnic_en.png" alt=""></a>
+                    <a href="#"><img src="/static/img/ft-cert.png" alt=""></a>
+                    <a href="#"><img src="/static/img/ft-gongshangxinxi.jpg" alt=""></a>
                 </div>
                 <div class="ft_info_frili">
                     <div class="ft_info_frili_wrap">

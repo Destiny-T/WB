@@ -625,7 +625,9 @@
                                         <div class="g_l_b_zw">
                                         <img class="g_l_b_zw_" src="" alt="" >
                                     </div>
-                                        <img src="/static/img/g_b2.jpg" alt="" class="goodsImg">
+
+                                        <img src="{{ good.g_src }}" alt="" class="goodsImg">
+
                                     </div>
                                 </a>
                             </div>
@@ -634,6 +636,12 @@
                                 <div class="g_l_s_wrap">
                                     <div class="g_l_s_wrap_">
                                         <div class="g_l_s_pic">
+                                            {% for img in smallimg %}
+                                                <a href="#" class="g_l_s_pic_a">
+                                                    <img src="{{ img.s_img }}" alt="">
+                                                </a>
+                                            {% endfor %}
+                                            
                                             <!--<a href="#" class="g_l_s_pic_a"><img src="img/g_l_s1.jpg" alt=""></a>-->
                                             <!--<a href="#" class="g_l_s_pic_a"><img src="img/g_l_s2.jpg" alt=""></a>-->
                                             <!--<a href="#" class="g_l_s_pic_a"><img src="img/g_l_s3.jpg" alt=""></a>-->
@@ -670,20 +678,20 @@
                                 <dd>瑞士</dd>
                             </dl>
                         </div>
-                        <h3 class="g_r_pro">天梭150周年纪念表款</h3>
+                        <h3 class="g_r_pro">{{ good.g_name }}</h3>
                         <i class="g_r_line"></i>
                         <div class="g_r_p">
                             <span class="g_r_p_h">万表价</span>
                             <div class="g_r_p_t">
-                                <p class="g_r_p_t_1">￥</p>
-                                <p class="g_r_p_t_2">￥</p>
-                                <p class="g_r_p_t_3"><i>7.5折</i></p>
+{#                                <p class="g_r_p_t_1">￥</p>#}
+{#                                <p class="g_r_p_t_2">￥</p>#}
+                                <p class="g_r_p_t_3"><i>{{ good.g_red }}</i></p>
                                 <p class="g_r_p_t_4">(降价通知)</p>
                             </div>
                             <div style="clear: both"></div>
                             <div class="g_r_p_b">
-                                <p class="g_r_p_b_1">￥<b>278</b></p>
-                                <p class="g_r_p_b_2"><span>×12 期</span></p>
+                                <p class="g_r_p_b_1"><b>{{ good.g_price }}</b></p>
+                                <p class="g_r_p_b_2"><span></span></p>
                                 <p class="g_r_p_b_3"><i class="g_r_p_b_3_btn"></i><a href="#">0手续费0利息</a></p>
                             </div>
                         </div>
@@ -715,13 +723,14 @@
                         <div class="g_r_st">
                             <div>
                                 <span class="g_r_p_h">款式</span>
-                                <div class="g_r_st_d1"><a href="#"><img src="/static/img/g_r_st1.jpg" alt=""></a></div>
-                                <div class="g_r_st_d1"><a href="#"><img src="/static/img/g_r_st1.jpg" alt=""></a></div>
-                                <div class="g_r_st_d1"><a href="#"><img src="/static/img/g_r_st1.jpg" alt=""></a></div>
-                                <div class="g_r_st_d1"><a href="#"><img src="/static/img/g_r_st1.jpg" alt=""></a></div>
-                                <div class="g_r_st_d1"><a href="#"><img src="/static/img/g_r_st1.jpg" alt=""></a></div>
-                                <div class="g_r_st_d1"><a href="#"><img src="/static/img/g_r_st1.jpg" alt=""></a></div>
-                                <div class="g_r_st_d1"><a href="#"><img src="/static/img/g_r_st1.jpg" alt=""></a></div>
+                                <div class="g_r_st_d1"><a href="#"><img src="{{ good.g_src }}" alt=""></a></div>
+                                <div class="g_r_st_d1"><a href="#"><img src="{{ good.g_src }}" alt=""></a></div>
+{#                                <div class="g_r_st_d1"><a href="#"><img src="/static/img/g_r_st1.jpg" alt=""></a></div>#}
+{#                                <div class="g_r_st_d1"><a href="#"><img src="/static/img/g_r_st1.jpg" alt=""></a></div>#}
+{#                                <div class="g_r_st_d1"><a href="#"><img src="/static/img/g_r_st1.jpg" alt=""></a></div>#}
+{#                                <div class="g_r_st_d1"><a href="#"><img src="/static/img/g_r_st1.jpg" alt=""></a></div>#}
+{#                                <div class="g_r_st_d1"><a href="#"><img src="/static/img/g_r_st1.jpg" alt=""></a></div>#}
+{#                                <div class="g_r_st_d1"><a href="#"><img src="/static/img/g_r_st1.jpg" alt=""></a></div>#}
                             </div>
                         </div>
                         <i class="g_r_line"></i>
@@ -733,13 +742,13 @@
                                     <span class="g_r_num_d1_l">-</span>
                                     <input type="text" class="g_r_num_d1_c" value="1">
                                     <span class="g_r_num_d1_r">+</span></div>
-                                <div class="g_r_num_d2">有现货，已售 <span>5908</span> 枚</div>
+                                <div class="g_r_num_d2">有现货，已售 <span>{{ good.g_num }}</span> 枚</div>
                             </div>
                         </div>
                         <div style="clear: both"></div>
                         <div class="g_r_btn">
-                            <a href="#" class="g_r_btn1"></a>
-                            <i class="g_r_btn2"></i>
+                            <a href="{% url 'wb:clearcart' good.id %}" class="g_r_btn1"></a>
+                            <a href="{% url 'wb:clearcart' good.id %}" class="g_r_btn2"></a>
                             <div class="g_r_btn_qr">
                                 <b></b>
                                 <span>扫码更优惠</span>

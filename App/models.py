@@ -23,3 +23,7 @@ class Goods(models.Model):
     g_red = models.CharField(max_length=30)
     g_num = models.CharField(max_length=50)
     g_src = models.CharField(max_length=100)
+
+
+class Smallimg(models.Model):
+    s_img = models.CharField(max_length=100)

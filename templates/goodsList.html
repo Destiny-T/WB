@@ -812,12 +812,12 @@
                     <ul>
                         {% for good in goodsList %}
                             <li class="gdList_r_m_list_li">
-                                <a href="{% url 'wb:cart' %}">
+                                <a href="{% url 'wb:cart' good.id %}">
                                     <dl class="gdList_r_m_list_dl">
                                         <dd>
-                                            <a href=" {% url 'wb:cart' %}">
+{#                                            <a href=" {% url 'wb:cart' %}">#}
                                                 <img src="{{ good.g_src }}" alt="">
-                                            </a>
+{#                                            </a>#}
                                         </dd>
                                         <dt>
                                             <p class="gdList_r_m_list_dl_p1">

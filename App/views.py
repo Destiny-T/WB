@@ -7,7 +7,7 @@ from django.shortcuts import render, redirect
 
 
 # Create your views here.
-from App.models import User, Banner, Goods, Hotbanner
+from App.models import User, Banner, Goods, Hotbanner, Smallimg
 
 
 # 首页
@@ -15,6 +15,7 @@ def index(request):
     token = request.session.get('token')
     b_imgs = Banner.objects.all()
     h_imgs = Hotbanner.objects.all()
+
     
 
     response_data = {
@@ -40,7 +41,9 @@ def register(request):
 
         user.username = username
         user.password = password
+        # 生成token
         user.token = str(uuid.uuid5(uuid.uuid4(),'register'))
+        # 保存到数据库
         user.save()
 
         request.session['token'] = user.token
@@ -63,6 +66,7 @@ def login(request):
             if user.password != generate_password(password):
                 return render(request,'login.html')
             else:
+                # 更新token
                 user.token = str(uuid.uuid5(uuid.uuid4(),'login'))
                 user.save()
 
@@ -74,7 +78,7 @@ def login(request):
     elif request.method == 'GET':
         return render(request,'login.html')
 
-
+# 加密
 def generate_password(password):
     sha = hashlib.sha512()
     sha.update(password.encode('utf-8'))
@@ -85,11 +89,15 @@ def quit(request):
     logout(request)
     return redirect('wb:index')
 
-
-def cart(request):
+# 商品详情
+def cart(request,ge):
     token = request.session.get('token')
-
-    response_data = {}
+    good = Goods.objects.all()[int(ge)-1]
+    smallimg = Smallimg.objects.all()
+    response_data = {
+        'good': good,
+        'smallimg':smallimg,
+    }
 
     if token:
         user = User.objects.get(token=token)
@@ -97,13 +105,15 @@ def cart(request):
 
     return render(request, 'addShopCart.html', context=response_data)
 
-
+# 商品列表
 def goods(request):
     token = request.session.get('token')
     goodsList = Goods.objects.all()
 
+
     response_data = {
         'goodsList':goodsList,
+
     }
 
     if token:
@@ -111,3 +121,13 @@ def goods(request):
         response_data['name'] = user.username
 
     return render(request, 'goodsList.html', context=response_data)
+
+
+def clearcart(request,good):
+    good = Goods.objects.all()[int(good) - 1]
+
+    response_data = {
+        'good':good,
+    }
+
+    return render(request,'clearShopCart.html',context=response_data)

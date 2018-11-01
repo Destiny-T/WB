@@ -27,3 +27,10 @@
 //     console.log(goods[0].num);
 //     $(".goodsNumx").html(goodsSum);
 // })
+
+// $(function () {
+//     $('.gdList_r_m_list_dl img').on('click', function () {
+//         var $a = $(this).attr('src')
+//         alert($a)
+//     })
+// })
