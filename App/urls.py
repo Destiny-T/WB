@@ -9,5 +9,6 @@ urlpatterns = [
     url(r'^quit/$',views.quit,name='quit'),
     url(r'^cart/(\d+)/$',views.cart,name='cart'),
     url(r'^goods/$',views.goods,name='goods'),
-    url(r'^clearcart/(\d+)/$',views.clearcart,name='clearcart')
+    url(r'^addtocart/$',views.addtocart,name='addtocart'),
+    url(r'^clearcart/$',views.clearcart,name='clearcart')
 ]

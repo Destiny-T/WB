@@ -7,7 +7,7 @@ from django.shortcuts import render, redirect
 
 
 # Create your views here.
-from App.models import User, Banner, Goods, Hotbanner, Smallimg
+from App.models import User, Banner, Goods, Hotbanner, Smallimg, Cart
 
 
 # 首页
@@ -89,21 +89,7 @@ def quit(request):
     logout(request)
     return redirect('wb:index')
 
-# 商品详情
-def cart(request,ge):
-    token = request.session.get('token')
-    good = Goods.objects.all()[int(ge)-1]
-    smallimg = Smallimg.objects.all()
-    response_data = {
-        'good': good,
-        'smallimg':smallimg,
-    }
 
-    if token:
-        user = User.objects.get(token=token)
-        response_data['name'] = user.username
-
-    return render(request, 'addShopCart.html', context=response_data)
 
 # 商品列表
 def goods(request):
@@ -123,11 +109,71 @@ def goods(request):
     return render(request, 'goodsList.html', context=response_data)
 
 
-def clearcart(request,good):
-    good = Goods.objects.all()[int(good) - 1]
 
+
+
+
+# 商品详情
+def cart(request,ge):
+    token = request.session.get('token')
+    good = Goods.objects.all()[int(ge)-1]
+    smallimg = Smallimg.objects.all()
     response_data = {
-        'good':good,
+        'good': good,
+        'smallimg':smallimg,
+
     }
 
-    return render(request,'clearShopCart.html',context=response_data)
+    if token:
+        user = User.objects.get(token=token)
+        response_data['name'] = user.username
+
+
+    return render(request, 'addShopCart.html', context=response_data)
+
+
+
+def addtocart(request):
+    token = request.session.get('token')
+    goodsid = request.GET.get('goodsid')
+
+
+    response_data = {
+        'msg': '',
+        'status': ''
+    }
+    if token:
+        user = User.objects.get(token=token)
+        goods = Goods.objects.get(pk=goodsid)
+
+        carts = Cart.objects.filter(goods=goods).filter(user=user)
+        if carts.exists():
+            cart = carts.first()
+            cart.number = carts.number + 1
+            cart.save()
+            response_data['msg'] = '添加购物车成功'
+            response_data['status'] = 1
+            response_data['number'] = cart.number
+            return JsonResponse(response_data)
+        else:
+            cart = Cart()
+            cart.user = user
+            cart.goods = goods
+            cart.number = 1
+            cart.save()
+
+            response_data['mag'] = '添加购物车成功'
+            response_data['status'] = 1
+            response_data['number'] = cart.number
+            return JsonResponse(response_data)
+    else:
+        response_data['msg'] = '你还未登录，请登陆'
+        response_data['status'] = '-1'
+        return JsonResponse(response_data)
+
+def clearcart(request):
+    response_data = {
+
+    }
+
+    return render(request, 'clearShopCart.html', context=response_data)

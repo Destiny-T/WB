@@ -740,15 +740,16 @@
                                 <span class="g_r_p_h">数量</span>
                                 <div class="g_r_num_d1">
                                     <span class="g_r_num_d1_l">-</span>
-                                    <input type="text" class="g_r_num_d1_c" value="1">
-                                    <span class="g_r_num_d1_r">+</span></div>
+                                    <input type="text" class="g_r_num_d1_c" value="0">
+                                    <span class="g_r_num_d1_r" goodsid="{{ goods.id }}">+</span>
+                                </div>
                                 <div class="g_r_num_d2">有现货，已售 <span>{{ good.g_num }}</span> 枚</div>
                             </div>
                         </div>
                         <div style="clear: both"></div>
                         <div class="g_r_btn">
-                            <a href="{% url 'wb:clearcart' good.id %}" class="g_r_btn1"></a>
-                            <a href="{% url 'wb:clearcart' good.id %}" class="g_r_btn2"></a>
+                            <a href="{% url 'wb:clearcart' %}" class="g_r_btn1"></a>
+                            <a href="{% url 'wb:clearcart' %}" class="g_r_btn2"></a>
                             <div class="g_r_btn_qr">
                                 <b></b>
                                 <span>扫码更优惠</span>
