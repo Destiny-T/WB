@@ -108,18 +108,32 @@
 // });
 
 $(function () {
+
+    // 加操作
     $('.g_r_num_d1_r').on('click',function () {
         var goodsid = $(this).attr('goodsid')
-        var $that = $(this)
-        console.log($(this))
+
         $.get('/wb/addtocart/',{'goodsid':goodsid},function (response) {
-            console.log($(this))
+            // console.log($(this))
             if (response['status'] == '-1'){
 
                 window.open('/wb/login/',target='_self')
             }else{
-                console.log(response)
+                // console.log(response)
+                $('.g_r_num_d1_c').attr('value',response['number'])
             }
         })
     })
+    // 减操作
+    $('.g_r_num_d1_l').on('click',function () {
+        var goodsid = $(this).attr('goodsid')
+
+        $.get('/wb/subtocart/',{'goodsid':goodsid},function(response){
+            console.log(response)
+            if(response['status'] == '1'){
+                $('.g_r_num_d1_c').attr('value',response['number'])
+            }
+        })
+    })
+
 })

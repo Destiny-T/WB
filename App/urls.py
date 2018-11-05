@@ -10,5 +10,7 @@ urlpatterns = [
     url(r'^cart/(\d+)/$',views.cart,name='cart'),
     url(r'^goods/$',views.goods,name='goods'),
     url(r'^addtocart/$',views.addtocart,name='addtocart'),
-    url(r'^clearcart/$',views.clearcart,name='clearcart')
+    url(r'^subtocart/$',views.subtocart,name='addtocart'),
+    url(r'^clearcart/$',views.clearcart,name='clearcart'),
+    url(r'^changecartstatus/$',views.changecartstatus,name='changecartstatus')
 ]

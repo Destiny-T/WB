@@ -323,3 +323,15 @@
     font-weight: bold;
     background: url("../img/clear_bgxct.png") repeat-x;
 }
+
+.xz{
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: purple solid 1px;
+
+
+}
+.glyphicon-ok{
+    text-align: center;
+}

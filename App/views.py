@@ -145,11 +145,12 @@ def addtocart(request):
     if token:
         user = User.objects.get(token=token)
         goods = Goods.objects.get(pk=goodsid)
+        print(goods)
 
         carts = Cart.objects.filter(goods=goods).filter(user=user)
         if carts.exists():
             cart = carts.first()
-            cart.number = carts.number + 1
+            cart.number = cart.number + 1
             cart.save()
             response_data['msg'] = '添加购物车成功'
             response_data['status'] = 1
@@ -172,8 +173,52 @@ def addtocart(request):
         return JsonResponse(response_data)
 
 def clearcart(request):
+    token = request.session.get('token')
+    carts = []
+    response_data = {}
+    if token:
+
+        user = User.objects.get(token=token)
+        response_data['name'] = user.username
+
+
+        carts = Cart.objects.filter(user=user).exclude(number=0)
+        response_data['carts'] = carts
+
+
+        return render(request, 'clearShopCart.html', context=response_data)
+
+
+def subtocart(request):
+    token = request.session.get('token')
+    user = User.objects.get(token=token)
+    goodsid = request.GET.get('goodsid')
+    goods = Goods.objects.get(pk=goodsid)
+
+
+    carts = Cart.objects.filter(user=user).filter(goods=goods)
+    cart = carts.first()
+    cart.number = cart.number - 1
+    cart.save()
+
     response_data = {
-
+        'msg':'删减成功',
+        'status':'1',
+        'number':cart.number
     }
+    return JsonResponse(response_data)
 
-    return render(request, 'clearShopCart.html', context=response_data)
+
+def changecartstatus(request):
+    cartid = request.GET.get('cartid')
+    cart = Cart.objects.get(pk=cartid)
+    cart.isselect = not cart.isselect
+    cart.save()
+
+
+    response_data = {
+        'msg':'修改状态成功',
+        'status':'1',
+        'isselect':cart.isselect,
+    }
+    return JsonResponse(response_data)
