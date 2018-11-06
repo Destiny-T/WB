@@ -94,7 +94,7 @@
                         </div>
                     </div>
                     <div class="shopCart">
-                        <a href="#">购物车
+                        <a href="{% url 'wb:clearcart' %}">购物车
                             <span class="icon-cart"></span>
                             <div class="btn_r_t">
                                 <p class="goodsNumx">0</p>
@@ -632,7 +632,7 @@
                             </div>
                         </div>
                         <div class="submenuNav">
-                            <a href="{% url 'wb:goods' %}">闪购</a>
+                            <a href="{% url 'wb:goods' %}" style="color: red">闪购超市</a>
                         </div>
                         <div class="submenuNav">
                             <a href="#">海外购</a>
@@ -1217,7 +1217,7 @@
         <div class="panelW">
             <div class="panelW_wrap">
                 <div class="pl_b">
-                    <a href="#" class="pl_b_a1">
+                    <a href="{% url 'wb:clearcart' %}" class="pl_b_a1">
                         <em class=""></em>
                         <b class="">购物车</b>
                         <i class=""></i>

@@ -116,7 +116,7 @@ def goods(request):
 # 商品详情
 def cart(request,ge):
     token = request.session.get('token')
-    good = Goods.objects.all()[int(ge)-1]
+    good = Goods.objects.all()[int(ge)]
     smallimg = Smallimg.objects.all()
     response_data = {
         'good': good,
@@ -138,9 +138,12 @@ def addtocart(request):
     goodsid = request.GET.get('goodsid')
 
 
+
+
     response_data = {
         'msg': '',
-        'status': ''
+        'status': '',
+
     }
     if token:
         user = User.objects.get(token=token)
@@ -174,6 +177,7 @@ def addtocart(request):
 
 def clearcart(request):
     token = request.session.get('token')
+
     carts = []
     response_data = {}
     if token:
@@ -186,7 +190,7 @@ def clearcart(request):
         response_data['carts'] = carts
 
 
-        return render(request, 'clearShopCart.html', context=response_data)
+    return render(request, 'clearShopCart.html', context=response_data)
 
 
 def subtocart(request):

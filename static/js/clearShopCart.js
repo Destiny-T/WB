@@ -233,7 +233,8 @@ $(function () {
     total()
 
 
-    $('.xz').on('click',function () {
+    $('.gds_tr2_td5').on('click',function () {
+        // console.log($(this))
         var cartid = $(this).attr('cartid')
         var $that = $(this)
 
@@ -247,7 +248,7 @@ $(function () {
                 $that.children().remove()
                 // console.log($(this))
                 if (isselect) {
-                    $that.append('<span class="glyphicon glyphicon-ok"></span>')
+                    $that.append('<span class="cd">*</span>')
                 } else {
                     $that.append('<span class="no"></span>')
                 }
@@ -260,18 +261,22 @@ $(function () {
     function total(){
         var sum = 0
 
-        $('.odr_goods').each(function () {
-            console.log($(this))
-            var $confirm = $(this).find('.gds_tr2_th5')
-            var $content = $(this).find('.goods')
+        $('.gds_tr2').each(function () {
+            // console.log($(this))
+            var $confirm = $(this).find('.gds_tr2_td5')
+            // console.log($confirm)
+            // var $content = $(this).find('.gds_tr2_td4')
+            // console.log($content)
 
 
-            if ($confirm.find('.glyphicon-ok').length){
-
-                var price = parseInt($content.find('.gds_tr2_th2').html())
-                console.log(price)
-                var num = parseInt($content.find('.gds_tr2_th4').attr('str'))
+            if ($confirm.find('.cd').length){
+                // console.log($(this))
+                var price = parseInt( $(this).find('.gds_tr2_td3_span').html())
+                // console.log(price)
+                var num = parseInt($(this).find('.gds_tr2_td4_int').attr('value'))
+                console.log(num)
                 sum += num * price
+                // console.log(sum)
             }
         })
         $('.odr_list_c_sum').html(sum)
