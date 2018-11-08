@@ -258,6 +258,53 @@ $(function () {
         })
     })
 
+
+
+    $('.qx').on('click',function () {
+        var isall = $(this).attr('isall')
+        isall = (isall == 'false') ? true : false
+        $(this).attr('isall',isall)
+
+
+        $(this).css('color','')
+        if (isall){
+            $(this).css('color','yellow').attr('value','取消全选')
+        }else{
+            $(this).attr('value','全选').css('color','red')
+        }
+        // console.log(isall)
+
+
+        $.get('/wb/changecartselect/',{'isall':isall},function (response) {
+            // console.log(response)
+            if(response['status'] == '1'){
+                $('.gds_tr2').each(function () {
+                    // console.log($(this))
+                    $('.gds_tr2_td5').attr('isselect',isall)
+                    $('.gds_tr2_td5').children().remove()
+                    // console.log($(this))
+                    if(isall){
+                        $('.gds_tr2_td5').append('<span class="cd">*</span>')
+                    }else{
+                        $('.gds_tr2_td5').append('<span class="no"></span>')
+                    }
+                })
+
+
+                total()
+            }
+        })
+    })
+
+
+
+
+
+
+
+
+
+
     function total(){
         var sum = 0
 
@@ -274,11 +321,49 @@ $(function () {
                 var price = parseInt( $(this).find('.gds_tr2_td3_span').html())
                 // console.log(price)
                 var num = parseInt($(this).find('.gds_tr2_td4_int').attr('value'))
-                console.log(num)
+                // console.log(num)
                 sum += num * price
                 // console.log(sum)
             }
         })
         $('.odr_list_c_sum').html(sum)
     }
+
+
+
+    $('#generate-order').on('click',function () {
+        $.get('/wb/generateorder/',function (response) {
+            console.log(response)
+            if(response['status'] == '1'){
+                var orderid = response['orderid']
+                window.open('/wb/orderinfo/?orderid='+orderid,target='_self')
+            }
+        })
+    })
+
+     $('.gds_tr2_td4_sp2').on('click',function () {
+        var goodsid = $(this).attr('goodsid')
+        console.log(goodsid)
+
+        $.get('/wb/addtocart/',{'goodsid':goodsid},function (response) {
+            conlose.log(response)
+            if (response['status'] == '1'){
+
+                $('.gds_tr2_td4_int').attr('value',response['number'])
+            }
+        })
+    })
+    // 减操作
+    $('.gds_tr2_td4_sp1').on('click',function () {
+        var goodsid = $(this).attr('goodsid')
+        console.log(goodsid)
+        $.get('/wb/subtocart/',{'goodsid':goodsid},function(response){
+            console.log(response)
+            if(response['status'] == '1'){
+                $('.gds_tr2_td4_int').attr('value',response['number'])
+            }
+        })
+    })
+
+
 })

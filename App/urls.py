@@ -12,5 +12,11 @@ urlpatterns = [
     url(r'^addtocart/$',views.addtocart,name='addtocart'),
     url(r'^subtocart/$',views.subtocart,name='addtocart'),
     url(r'^clearcart/$',views.clearcart,name='clearcart'),
-    url(r'^changecartstatus/$',views.changecartstatus,name='changecartstatus')
+    url(r'^changecartstatus/$',views.changecartstatus,name='changecartstatus'),
+    url(r'^changecartselect/$',views.changecartselect,name='changecartselect'),
+
+    url(r'^generateorder/$',views.generateorder,name='generateorder'),
+    url(r'^orderinfo/$',views.orderinfo,name='orderinfo'),
+    url(r'^changeorderstatus/$',views.changeorderstatus,name='changeorderstatus'),
+
 ]

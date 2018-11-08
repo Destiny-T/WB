@@ -7,7 +7,7 @@ from django.shortcuts import render, redirect
 
 
 # Create your views here.
-from App.models import User, Banner, Goods, Hotbanner, Smallimg, Cart
+from App.models import User, Banner, Goods, Hotbanner, Smallimg, Cart, Order, OrderGoods
 
 
 # 首页
@@ -116,7 +116,7 @@ def goods(request):
 # 商品详情
 def cart(request,ge):
     token = request.session.get('token')
-    good = Goods.objects.all()[int(ge)]
+    good = Goods.objects.all()[int(ge)-1]
     smallimg = Smallimg.objects.all()
     response_data = {
         'good': good,
@@ -132,7 +132,7 @@ def cart(request,ge):
     return render(request, 'addShopCart.html', context=response_data)
 
 
-
+# 添加购物车
 def addtocart(request):
     token = request.session.get('token')
     goodsid = request.GET.get('goodsid')
@@ -140,11 +140,7 @@ def addtocart(request):
 
 
 
-    response_data = {
-        'msg': '',
-        'status': '',
-
-    }
+    response_data = {}
     if token:
         user = User.objects.get(token=token)
         goods = Goods.objects.get(pk=goodsid)
@@ -174,7 +170,7 @@ def addtocart(request):
         response_data['msg'] = '你还未登录，请登陆'
         response_data['status'] = '-1'
         return JsonResponse(response_data)
-
+#
 def clearcart(request):
     token = request.session.get('token')
 
@@ -192,7 +188,7 @@ def clearcart(request):
 
     return render(request, 'clearShopCart.html', context=response_data)
 
-
+# 购物车删减
 def subtocart(request):
     token = request.session.get('token')
     user = User.objects.get(token=token)
@@ -212,7 +208,7 @@ def subtocart(request):
     }
     return JsonResponse(response_data)
 
-
+# 购物车单个状态
 def changecartstatus(request):
     cartid = request.GET.get('cartid')
     cart = Cart.objects.get(pk=cartid)
@@ -226,3 +222,74 @@ def changecartstatus(request):
         'isselect':cart.isselect,
     }
     return JsonResponse(response_data)
+
+# 购物车全选状态
+def changecartselect(request):
+    isall = request.GET.get('isall')
+    if isall == 'true':
+        isall = True
+    else:
+        isall = False
+
+    token = request.session.get('token')
+    user = User.objects.get(token=token)
+    carts = Cart.objects.filter(user=user)
+    for cart in carts:
+        cart.isselect = isall
+        cart.save()
+
+
+    response_data = {
+        'status':'1',
+        'msg':'全选/取消全选'
+    }
+    return JsonResponse(response_data)
+
+# 下单
+def generateorder(request):
+    token = request.session.get('token')
+    user = User.objects.get(token=token)
+
+    order = Order()
+    order.user = user
+    order.number = str(uuid.uuid5(uuid.uuid4(), 'order'))
+    order.save()
+
+    carts = Cart.objects.filter(user=user).filter(isselect=True)
+    orderGoods = OrderGoods()
+    for cart in carts :
+        # print(cart.id)
+        # orderGoods = OrderGoods()
+
+        orderGoods.order = order
+        orderGoods.goods = cart.goods
+        orderGoods.number = cart.number
+        orderGoods.save()
+
+        # cart.delete()
+
+    response_data = {
+            'status': '1',
+            'msg': '订单生成成功（未付款）',
+            'orderid': order.id
+        }
+    return JsonResponse(response_data)
+
+
+# 订单详情
+def orderinfo(request):
+    token = request.session.get('token')
+    user = User.objects.get(token=token)
+    orderid = request.GET.get('orderid')
+    order = Order.objects.get(pk=orderid)
+
+    response_data = {
+        'title':'订单详情',
+        'order':order,
+        'name':user.username
+    }
+    return render(request,'orderinfo.html',context=response_data)
+
+# 订单处理
+def changeorderstatus(request):
+    return None

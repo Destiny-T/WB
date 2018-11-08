@@ -117,9 +117,9 @@
                                     </td>
                                     <td class="gds_tr2_td4">
                                         <p></p>
-                                        <span class="gds_tr2_td4_sp1">-</span>
+                                        <span class="gds_tr2_td4_sp1" goodsid="{{ cart.goods.id }}">-</span>
                                         <input type="text" class="gds_tr2_td4_int" value="{{ cart.number }}">
-                                        <span class="gds_tr2_td4_sp2">+</span>
+                                        <span class="gds_tr2_td4_sp2" goodsid="{{ cart.goods.id }}">+</span>
                                     </td>
                                     <td class="gds_tr2_td5" isselect="{{ cart.isselect }}" cartid="{{ cart.id }}">
                                         {% if isselect %}
@@ -138,14 +138,16 @@
 
 
                     <div class="odr_list_c">
-                        <p class="odr_list_c_p1"><span>
-                            <botton class="qx" style="width: 10px;htight:10px;background: red">全选</botton>
-                        </span></p>
+                        <p class="odr_list_c_p1" isall="false">
+                            <span class="no"></span>
+                            <input type="button" value="全选" class="qx">
+
+                        </p>
                         <p class="odr_list_c_p1">商品总额：<span>￥<span class="odr_list_c_sum">3337</span></span></p>
                         <p class="odr_list_c_p2">共节省：￥<span class="odr_list_c_save">1113</span></p>
                         <p class="odr_list_c_p3">
                             <span>你还可以 <a href="{% url 'wb:goods' %}">继续购物</a></span>
-                            <button class="odr_list_c_act">立即结算</button>
+                            <button class="odr_list_c_act" id="generate-order">立即下单</button>
                         </p>
                     </div>
                 </div>

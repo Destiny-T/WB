@@ -13,6 +13,7 @@
     <script type="text/javascript" src="/static/js/indexHeader.js"></script>
     <script type="text/javascript" src="/static/js/addShopCart.js"></script>
     <script type="text/javascript" src="/static/js/goodsMsg.js"></script>
+
 </head>
 <body>
     <div class="wrapper">
@@ -623,7 +624,7 @@
 
                                         </div>
                                         <div class="g_l_b_zw">
-                                        <img class="g_l_b_zw_" src="" alt="" >
+                                        <img class="g_l_b_zw_" src="{{ good.g_src }" alt="" >
                                     </div>
 
                                         <img src="{{ good.g_src }}" alt="" class="goodsImg">
@@ -637,7 +638,7 @@
                                     <div class="g_l_s_wrap_">
                                         <div class="g_l_s_pic">
                                             {% for img in smallimg %}
-                                                <a href="#" class="g_l_s_pic_a">
+                                                <a href='#' class='g_l_s_pic_a'>
                                                     <img src="{{ img.s_img }}" alt="">
                                                 </a>
                                             {% endfor %}
