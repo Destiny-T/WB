@@ -232,7 +232,7 @@ $(function () {
 
     total()
 
-
+    //单选
     $('.gds_tr2_td5').on('click',function () {
         // console.log($(this))
         var cartid = $(this).attr('cartid')
@@ -259,7 +259,7 @@ $(function () {
     })
 
 
-
+    // 全选
     $('.qx').on('click',function () {
         var isall = $(this).attr('isall')
         isall = (isall == 'false') ? true : false
@@ -274,7 +274,7 @@ $(function () {
         }
         // console.log(isall)
 
-
+        //ajax操作
         $.get('/wb/changecartselect/',{'isall':isall},function (response) {
             // console.log(response)
             if(response['status'] == '1'){
@@ -304,7 +304,7 @@ $(function () {
 
 
 
-
+    // 结算总数
     function total(){
         var sum = 0
 
@@ -333,7 +333,7 @@ $(function () {
 
     $('#generate-order').on('click',function () {
         $.get('/wb/generateorder/',function (response) {
-            console.log(response)
+            // console.log(response)
             if(response['status'] == '1'){
                 var orderid = response['orderid']
                 window.open('/wb/orderinfo/?orderid='+orderid,target='_self')
@@ -341,26 +341,31 @@ $(function () {
         })
     })
 
-     $('.gds_tr2_td4_sp2').on('click',function () {
+    // 加操作
+    $('.gds_tr2_td4_sp2').on('click',function () {
         var goodsid = $(this).attr('goodsid')
-        console.log(goodsid)
+        var $that = $(this)
+        // console.log(goodsid)
 
-        $.get('/wb/addtocart/',{'goodsid':goodsid},function (response) {
-            conlose.log(response)
+        $.get('/wb/cartsadd/',{'goodsid':goodsid},function (response) {
+            // console.log(response)
             if (response['status'] == '1'){
 
-                $('.gds_tr2_td4_int').attr('value',response['number'])
+                $that.prev()        .attr('value',response['number'])
             }
         })
     })
+
+
     // 减操作
     $('.gds_tr2_td4_sp1').on('click',function () {
         var goodsid = $(this).attr('goodsid')
-        console.log(goodsid)
+        var $that = $(this)
+        // console.log(goodsid)
         $.get('/wb/subtocart/',{'goodsid':goodsid},function(response){
-            console.log(response)
+            // console.log(response)
             if(response['status'] == '1'){
-                $('.gds_tr2_td4_int').attr('value',response['number'])
+                $that.next().attr('value',response['number'])
             }
         })
     })

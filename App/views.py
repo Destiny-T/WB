@@ -144,7 +144,7 @@ def addtocart(request):
     if token:
         user = User.objects.get(token=token)
         goods = Goods.objects.get(pk=goodsid)
-        print(goods)
+
 
         carts = Cart.objects.filter(goods=goods).filter(user=user)
         if carts.exists():
@@ -170,7 +170,33 @@ def addtocart(request):
         response_data['msg'] = '你还未登录，请登陆'
         response_data['status'] = '-1'
         return JsonResponse(response_data)
-#
+
+def cartsadd(request):
+    token = request.session.get('token')
+    goodsid = request.GET.get('goodsid')
+
+
+
+
+    response_data = {}
+    if token:
+        user = User.objects.get(token=token)
+        goods = Goods.objects.get(pk=goodsid)
+
+
+        carts = Cart.objects.filter(goods=goods).filter(user=user)
+        if carts.exists():
+            cart = carts.first()
+            cart.number = cart.number + 1
+            cart.save()
+            response_data['msg'] = '添加购物车成功'
+            response_data['status'] = 1
+            response_data['number'] = cart.number
+            return JsonResponse(response_data)
+
+
+
+# 清空购物车
 def clearcart(request):
     token = request.session.get('token')
 
@@ -200,6 +226,9 @@ def subtocart(request):
     cart = carts.first()
     cart.number = cart.number - 1
     cart.save()
+
+    if cart.number == 0:
+        cart.delect()
 
     response_data = {
         'msg':'删减成功',
@@ -256,17 +285,18 @@ def generateorder(request):
     order.save()
 
     carts = Cart.objects.filter(user=user).filter(isselect=True)
-    orderGoods = OrderGoods()
+
+
     for cart in carts :
         # print(cart.id)
-        # orderGoods = OrderGoods()
+        orderGoods = OrderGoods()
 
         orderGoods.order = order
         orderGoods.goods = cart.goods
         orderGoods.number = cart.number
         orderGoods.save()
 
-        # cart.delete()
+        cart.delete()
 
     response_data = {
             'status': '1',
