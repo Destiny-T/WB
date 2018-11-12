@@ -18,6 +18,6 @@ urlpatterns = [
 
     url(r'^generateorder/$',views.generateorder,name='generateorder'), # 生成订单
     url(r'^orderinfo/$',views.orderinfo,name='orderinfo'), # 订单信息
-    url(r'^changeorderstatus/$',views.changeorderstatus,name='changeorderstatus'),# 订单状态
+    
 
 ]
