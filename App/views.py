@@ -320,6 +320,3 @@ def orderinfo(request):
     }
     return render(request,'orderinfo.html',context=response_data)
 
-# 订单处理
-def changeorderstatus(request):
-    return None
